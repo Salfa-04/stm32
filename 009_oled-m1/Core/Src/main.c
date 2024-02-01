@@ -112,10 +112,6 @@ int main(void)
   OLED_Clear();
   OLED_ShowHzkS(0, 0, hzk, 3);
 
-  // 清行
-  // OLED_Clearrow(2);
-  // OLED_Clearrow(3);
-
   /* USER CODE END 2 */
 
   /* Infinite loop */
