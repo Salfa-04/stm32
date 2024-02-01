@@ -1,0 +1,105 @@
+ARM GAS  /tmp/ccZyrPpl.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.arch armv7-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 4
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"gpio.c"
+  14              		.text
+  15              		.section	.text.MX_GPIO_Init,"ax",%progbits
+  16              		.align	1
+  17              		.global	MX_GPIO_Init
+  18              		.syntax unified
+  19              		.thumb
+  20              		.thumb_func
+  22              	MX_GPIO_Init:
+  23              		@ args = 0, pretend = 0, frame = 32
+  24              		@ frame_needed = 0, uses_anonymous_args = 0
+  25 0000 1022     		movs	r2, #16
+  26 0002 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
+  27 0006 88B0     		sub	sp, sp, #32
+  28 0008 0DEB0200 		add	r0, sp, r2
+  29 000c 0021     		movs	r1, #0
+  30 000e FFF7FEFF 		bl	memset
+  31 0012 214B     		ldr	r3, .L2
+  32 0014 DFF88480 		ldr	r8, .L2+4
+  33 0018 9A69     		ldr	r2, [r3, #24]
+  34 001a 214C     		ldr	r4, .L2+8
+  35 001c 42F01002 		orr	r2, r2, #16
+  36 0020 9A61     		str	r2, [r3, #24]
+  37 0022 9A69     		ldr	r2, [r3, #24]
+  38 0024 4046     		mov	r0, r8
+  39 0026 02F01002 		and	r2, r2, #16
+  40 002a 0192     		str	r2, [sp, #4]
+  41 002c 019A     		ldr	r2, [sp, #4]
+  42 002e 9A69     		ldr	r2, [r3, #24]
+  43 0030 4FF40051 		mov	r1, #8192
+  44 0034 42F02002 		orr	r2, r2, #32
+  45 0038 9A61     		str	r2, [r3, #24]
+  46 003a 9A69     		ldr	r2, [r3, #24]
+  47 003c 0127     		movs	r7, #1
+  48 003e 02F02002 		and	r2, r2, #32
+  49 0042 0292     		str	r2, [sp, #8]
+  50 0044 029A     		ldr	r2, [sp, #8]
+  51 0046 9A69     		ldr	r2, [r3, #24]
+  52 0048 0026     		movs	r6, #0
+  53 004a 42F00402 		orr	r2, r2, #4
+  54 004e 9A61     		str	r2, [r3, #24]
+  55 0050 9B69     		ldr	r3, [r3, #24]
+  56 0052 0022     		movs	r2, #0
+  57 0054 03F00403 		and	r3, r3, #4
+  58 0058 0393     		str	r3, [sp, #12]
+ARM GAS  /tmp/ccZyrPpl.s 			page 2
+
+
+  59 005a 039B     		ldr	r3, [sp, #12]
+  60 005c FFF7FEFF 		bl	HAL_GPIO_WritePin
+  61 0060 0022     		movs	r2, #0
+  62 0062 2046     		mov	r0, r4
+  63 0064 6021     		movs	r1, #96
+  64 0066 FFF7FEFF 		bl	HAL_GPIO_WritePin
+  65 006a 0225     		movs	r5, #2
+  66 006c 4FF40053 		mov	r3, #8192
+  67 0070 4046     		mov	r0, r8
+  68 0072 04A9     		add	r1, sp, #16
+  69 0074 CDE90437 		strd	r3, r7, [sp, #16]
+  70 0078 CDE90665 		strd	r6, r5, [sp, #24]
+  71 007c FFF7FEFF 		bl	HAL_GPIO_Init
+  72 0080 6023     		movs	r3, #96
+  73 0082 2046     		mov	r0, r4
+  74 0084 04A9     		add	r1, sp, #16
+  75 0086 CDE90437 		strd	r3, r7, [sp, #16]
+  76 008a CDE90665 		strd	r6, r5, [sp, #24]
+  77 008e FFF7FEFF 		bl	HAL_GPIO_Init
+  78 0092 08B0     		add	sp, sp, #32
+  79              		@ sp needed
+  80 0094 BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
+  81              	.L3:
+  82              		.align	2
+  83              	.L2:
+  84 0098 00100240 		.word	1073876992
+  85 009c 00100140 		.word	1073811456
+  86 00a0 00080140 		.word	1073809408
+  88              		.ident	"GCC: (Arch Repository) 13.2.0"
+ARM GAS  /tmp/ccZyrPpl.s 			page 3
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 gpio.c
+     /tmp/ccZyrPpl.s:16     .text.MX_GPIO_Init:00000000 $t
+     /tmp/ccZyrPpl.s:22     .text.MX_GPIO_Init:00000000 MX_GPIO_Init
+     /tmp/ccZyrPpl.s:84     .text.MX_GPIO_Init:00000098 $d
+
+UNDEFINED SYMBOLS
+memset
+HAL_GPIO_WritePin
+HAL_GPIO_Init

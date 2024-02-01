@@ -1,0 +1,117 @@
+ARM GAS  /tmp/ccWcXqbd.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.arch armv7-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 4
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"system_stm32f1xx.c"
+  14              		.text
+  15              		.section	.text.SystemInit,"ax",%progbits
+  16              		.align	1
+  17              		.global	SystemInit
+  18              		.syntax unified
+  19              		.thumb
+  20              		.thumb_func
+  22              	SystemInit:
+  23              		@ args = 0, pretend = 0, frame = 0
+  24              		@ frame_needed = 0, uses_anonymous_args = 0
+  25              		@ link register save eliminated.
+  26 0000 7047     		bx	lr
+  28              		.section	.text.SystemCoreClockUpdate,"ax",%progbits
+  29              		.align	1
+  30              		.global	SystemCoreClockUpdate
+  31              		.syntax unified
+  32              		.thumb
+  33              		.thumb_func
+  35              	SystemCoreClockUpdate:
+  36              		@ args = 0, pretend = 0, frame = 0
+  37              		@ frame_needed = 0, uses_anonymous_args = 0
+  38              		@ link register save eliminated.
+  39 0000 0F4A     		ldr	r2, .L9
+  40 0002 5368     		ldr	r3, [r2, #4]
+  41 0004 03F00C03 		and	r3, r3, #12
+  42 0008 082B     		cmp	r3, #8
+  43 000a 17D1     		bne	.L6
+  44 000c 5368     		ldr	r3, [r2, #4]
+  45 000e 5168     		ldr	r1, [r2, #4]
+  46 0010 C3F38343 		ubfx	r3, r3, #18, #4
+  47 0014 C803     		lsls	r0, r1, #15
+  48 0016 03F10203 		add	r3, r3, #2
+  49 001a 0AD4     		bmi	.L4
+  50              	.L8:
+  51 001c 0949     		ldr	r1, .L9+4
+  52              	.L7:
+  53 001e 4B43     		muls	r3, r1, r3
+  54              	.L3:
+  55 0020 5268     		ldr	r2, [r2, #4]
+  56 0022 0949     		ldr	r1, .L9+8
+  57 0024 C2F30312 		ubfx	r2, r2, #4, #4
+  58 0028 8A5C     		ldrb	r2, [r1, r2]	@ zero_extendqisi2
+  59 002a D340     		lsrs	r3, r3, r2
+  60 002c 074A     		ldr	r2, .L9+12
+ARM GAS  /tmp/ccWcXqbd.s 			page 2
+
+
+  61 002e 1360     		str	r3, [r2]
+  62 0030 7047     		bx	lr
+  63              	.L4:
+  64 0032 5168     		ldr	r1, [r2, #4]
+  65 0034 8903     		lsls	r1, r1, #14
+  66 0036 F1D4     		bmi	.L8
+  67 0038 0549     		ldr	r1, .L9+16
+  68 003a F0E7     		b	.L7
+  69              	.L6:
+  70 003c 044B     		ldr	r3, .L9+16
+  71 003e EFE7     		b	.L3
+  72              	.L10:
+  73              		.align	2
+  74              	.L9:
+  75 0040 00100240 		.word	1073876992
+  76 0044 00093D00 		.word	4000000
+  77 0048 00000000 		.word	AHBPrescTable
+  78 004c 00000000 		.word	SystemCoreClock
+  79 0050 00127A00 		.word	8000000
+  81              		.global	APBPrescTable
+  82              		.section	.rodata.APBPrescTable,"a"
+  85              	APBPrescTable:
+  86 0000 00000000 		.ascii	"\000\000\000\000\001\002\003\004"
+  86      01020304 
+  87              		.global	AHBPrescTable
+  88              		.section	.rodata.AHBPrescTable,"a"
+  91              	AHBPrescTable:
+  92 0000 00000000 		.ascii	"\000\000\000\000\000\000\000\000\001\002\003\004\006"
+  92      00000000 
+  92      01020304 
+  92      06
+  93 000d 070809   		.ascii	"\007\010\011"
+  94              		.global	SystemCoreClock
+  95              		.section	.data.SystemCoreClock,"aw"
+  96              		.align	2
+  99              	SystemCoreClock:
+ 100 0000 0024F400 		.word	16000000
+ 101              		.ident	"GCC: (Arch Repository) 13.2.0"
+ARM GAS  /tmp/ccWcXqbd.s 			page 3
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 system_stm32f1xx.c
+     /tmp/ccWcXqbd.s:16     .text.SystemInit:00000000 $t
+     /tmp/ccWcXqbd.s:22     .text.SystemInit:00000000 SystemInit
+     /tmp/ccWcXqbd.s:29     .text.SystemCoreClockUpdate:00000000 $t
+     /tmp/ccWcXqbd.s:35     .text.SystemCoreClockUpdate:00000000 SystemCoreClockUpdate
+     /tmp/ccWcXqbd.s:75     .text.SystemCoreClockUpdate:00000040 $d
+     /tmp/ccWcXqbd.s:91     .rodata.AHBPrescTable:00000000 AHBPrescTable
+     /tmp/ccWcXqbd.s:99     .data.SystemCoreClock:00000000 SystemCoreClock
+     /tmp/ccWcXqbd.s:85     .rodata.APBPrescTable:00000000 APBPrescTable
+     /tmp/ccWcXqbd.s:96     .data.SystemCoreClock:00000000 $d
+
+NO UNDEFINED SYMBOLS

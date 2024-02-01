@@ -1,0 +1,190 @@
+ARM GAS  /tmp/ccyEsHQm.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.arch armv7-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 4
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"main.c"
+  14              		.text
+  15              		.section	.text.HAL_TIM_PeriodElapsedCallback,"ax",%progbits
+  16              		.align	1
+  17              		.global	HAL_TIM_PeriodElapsedCallback
+  18              		.syntax unified
+  19              		.thumb
+  20              		.thumb_func
+  22              	HAL_TIM_PeriodElapsedCallback:
+  23              		@ args = 0, pretend = 0, frame = 0
+  24              		@ frame_needed = 0, uses_anonymous_args = 0
+  25 0000 0368     		ldr	r3, [r0]
+  26 0002 10B5     		push	{r4, lr}
+  27 0004 B3F1804F 		cmp	r3, #1073741824
+  28 0008 0446     		mov	r4, r0
+  29 000a 03D1     		bne	.L2
+  30 000c 2021     		movs	r1, #32
+  31 000e 0748     		ldr	r0, .L4
+  32 0010 FFF7FEFF 		bl	HAL_GPIO_TogglePin
+  33              	.L2:
+  34 0014 2268     		ldr	r2, [r4]
+  35 0016 064B     		ldr	r3, .L4+4
+  36 0018 9A42     		cmp	r2, r3
+  37 001a 05D1     		bne	.L1
+  38 001c BDE81040 		pop	{r4, lr}
+  39 0020 4021     		movs	r1, #64
+  40 0022 0248     		ldr	r0, .L4
+  41 0024 FFF7FEBF 		b	HAL_GPIO_TogglePin
+  42              	.L1:
+  43 0028 10BD     		pop	{r4, pc}
+  44              	.L5:
+  45 002a 00BF     		.align	2
+  46              	.L4:
+  47 002c 00080140 		.word	1073809408
+  48 0030 00040040 		.word	1073742848
+  50              		.section	.text.SystemClock_Config,"ax",%progbits
+  51              		.align	1
+  52              		.global	SystemClock_Config
+  53              		.syntax unified
+  54              		.thumb
+  55              		.thumb_func
+  57              	SystemClock_Config:
+  58              		@ args = 0, pretend = 0, frame = 64
+  59              		@ frame_needed = 0, uses_anonymous_args = 0
+  60 0000 30B5     		push	{r4, r5, lr}
+ARM GAS  /tmp/ccyEsHQm.s 			page 2
+
+
+  61 0002 91B0     		sub	sp, sp, #68
+  62 0004 1422     		movs	r2, #20
+  63 0006 0021     		movs	r1, #0
+  64 0008 08A8     		add	r0, sp, #32
+  65 000a FFF7FEFF 		bl	memset
+  66 000e 1422     		movs	r2, #20
+  67 0010 0021     		movs	r1, #0
+  68 0012 01A8     		add	r0, sp, #4
+  69 0014 FFF7FEFF 		bl	memset
+  70 0018 0124     		movs	r4, #1
+  71 001a 4FF48033 		mov	r3, #65536
+  72 001e 0225     		movs	r5, #2
+  73 0020 CDE90643 		strd	r4, r3, [sp, #24]
+  74 0024 CDE90D53 		strd	r5, r3, [sp, #52]
+  75 0028 4FF40023 		mov	r3, #524288
+  76 002c 06A8     		add	r0, sp, #24
+  77 002e 0A94     		str	r4, [sp, #40]
+  78 0030 0F93     		str	r3, [sp, #60]
+  79 0032 FFF7FEFF 		bl	HAL_RCC_OscConfig
+  80 0036 08B1     		cbz	r0, .L7
+  81              		.syntax unified
+  82              	@ 142 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+  83 0038 72B6     		cpsid i
+  84              	@ 0 "" 2
+  85              		.thumb
+  86              		.syntax unified
+  87              	.L8:
+  88 003a FEE7     		b	.L8
+  89              	.L7:
+  90 003c 0F23     		movs	r3, #15
+  91 003e CDE90300 		strd	r0, r0, [sp, #12]
+  92 0042 0590     		str	r0, [sp, #20]
+  93 0044 2146     		mov	r1, r4
+  94 0046 01A8     		add	r0, sp, #4
+  95 0048 CDE90135 		strd	r3, r5, [sp, #4]
+  96 004c FFF7FEFF 		bl	HAL_RCC_ClockConfig
+  97 0050 08B1     		cbz	r0, .L6
+  98              		.syntax unified
+  99              	@ 142 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 100 0052 72B6     		cpsid i
+ 101              	@ 0 "" 2
+ 102              		.thumb
+ 103              		.syntax unified
+ 104              	.L10:
+ 105 0054 FEE7     		b	.L10
+ 106              	.L6:
+ 107 0056 11B0     		add	sp, sp, #68
+ 108              		@ sp needed
+ 109 0058 30BD     		pop	{r4, r5, pc}
+ 111              		.section	.text.startup.main,"ax",%progbits
+ 112              		.align	1
+ 113              		.global	main
+ 114              		.syntax unified
+ 115              		.thumb
+ 116              		.thumb_func
+ 118              	main:
+ 119              		@ Volatile: function does not return.
+ARM GAS  /tmp/ccyEsHQm.s 			page 3
+
+
+ 120              		@ args = 0, pretend = 0, frame = 0
+ 121              		@ frame_needed = 0, uses_anonymous_args = 0
+ 122 0000 08B5     		push	{r3, lr}
+ 123 0002 FFF7FEFF 		bl	HAL_Init
+ 124 0006 FFF7FEFF 		bl	SystemClock_Config
+ 125 000a FFF7FEFF 		bl	MX_GPIO_Init
+ 126 000e FFF7FEFF 		bl	MX_TIM2_Init
+ 127 0012 FFF7FEFF 		bl	MX_TIM3_Init
+ 128 0016 0348     		ldr	r0, .L13
+ 129 0018 FFF7FEFF 		bl	HAL_TIM_Base_Start_IT
+ 130 001c 0248     		ldr	r0, .L13+4
+ 131 001e FFF7FEFF 		bl	HAL_TIM_Base_Start_IT
+ 132              	.L12:
+ 133 0022 FEE7     		b	.L12
+ 134              	.L14:
+ 135              		.align	2
+ 136              	.L13:
+ 137 0024 00000000 		.word	htim2
+ 138 0028 00000000 		.word	htim3
+ 140              		.section	.text.Error_Handler,"ax",%progbits
+ 141              		.align	1
+ 142              		.global	Error_Handler
+ 143              		.syntax unified
+ 144              		.thumb
+ 145              		.thumb_func
+ 147              	Error_Handler:
+ 148              		@ Volatile: function does not return.
+ 149              		@ args = 0, pretend = 0, frame = 0
+ 150              		@ frame_needed = 0, uses_anonymous_args = 0
+ 151              		@ link register save eliminated.
+ 152              		.syntax unified
+ 153              	@ 142 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 154 0000 72B6     		cpsid i
+ 155              	@ 0 "" 2
+ 156              		.thumb
+ 157              		.syntax unified
+ 158              	.L16:
+ 159 0002 FEE7     		b	.L16
+ 161              		.ident	"GCC: (Arch Repository) 13.2.0"
+ARM GAS  /tmp/ccyEsHQm.s 			page 4
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 main.c
+     /tmp/ccyEsHQm.s:16     .text.HAL_TIM_PeriodElapsedCallback:00000000 $t
+     /tmp/ccyEsHQm.s:22     .text.HAL_TIM_PeriodElapsedCallback:00000000 HAL_TIM_PeriodElapsedCallback
+     /tmp/ccyEsHQm.s:47     .text.HAL_TIM_PeriodElapsedCallback:0000002c $d
+     /tmp/ccyEsHQm.s:51     .text.SystemClock_Config:00000000 $t
+     /tmp/ccyEsHQm.s:57     .text.SystemClock_Config:00000000 SystemClock_Config
+     /tmp/ccyEsHQm.s:112    .text.startup.main:00000000 $t
+     /tmp/ccyEsHQm.s:118    .text.startup.main:00000000 main
+     /tmp/ccyEsHQm.s:137    .text.startup.main:00000024 $d
+     /tmp/ccyEsHQm.s:141    .text.Error_Handler:00000000 $t
+     /tmp/ccyEsHQm.s:147    .text.Error_Handler:00000000 Error_Handler
+
+UNDEFINED SYMBOLS
+HAL_GPIO_TogglePin
+memset
+HAL_RCC_OscConfig
+HAL_RCC_ClockConfig
+HAL_Init
+MX_GPIO_Init
+MX_TIM2_Init
+MX_TIM3_Init
+HAL_TIM_Base_Start_IT
+htim2
+htim3
