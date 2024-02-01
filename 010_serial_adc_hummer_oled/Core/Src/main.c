@@ -61,7 +61,7 @@ void SystemClock_Config(void);
 #include "oled.h"
 
 uint32_t adc_buff;
-uint8_t oled_buff[2], rx_buff[1];
+uint8_t oled_buff[2], rx_buff, is_blocked = 0;
 
 uint8_t hello_buff[] = "Welcome, System Starting...";
 
@@ -103,24 +103,47 @@ uint8_t welcome[][16] = {
 
 void LED_ON(void)
 {
+  if (is_blocked)
+  {
+    return;
+  }
+
   HAL_GPIO_WritePin(GPIOA, GPIO_PIN_6, GPIO_PIN_SET);
   OLED_ShowString(40, 4, " ON", 16);
 }
 
 void LED_OFF(void)
 {
+
+  if (is_blocked)
+  {
+    return;
+  }
+
   HAL_GPIO_WritePin(GPIOA, GPIO_PIN_6, GPIO_PIN_RESET);
   OLED_ShowString(40, 4, "OFF", 16);
 }
 
 void HUM_ON(void)
 {
+
+  if (is_blocked)
+  {
+    return;
+  }
+
   HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET);
   OLED_ShowString(56, 6, " ON", 16);
 }
 
 void HUM_OFF(void)
 {
+
+  if (is_blocked)
+  {
+    return;
+  }
+
   HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_SET);
   OLED_ShowString(56, 6, "OFF", 16);
 }
@@ -130,20 +153,38 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 
   if (huart->Instance == USART1)
   {
-    if (*rx_buff == 0x00)
+    if (rx_buff == 0x00)
+    {
+      is_blocked = 0;
       LED_ON();
-    else if (*rx_buff == 0x01)
+      is_blocked = 1;
+    }
+    else if (rx_buff == 0x01)
+    {
+      is_blocked = 0;
       LED_OFF();
-    else if (*rx_buff == 0x02)
+      is_blocked = 1;
+    }
+    else if (rx_buff == 0x02)
+    {
+      is_blocked = 0;
       HUM_ON();
-    else if (*rx_buff == 0x03)
+      is_blocked = 1;
+    }
+    else if (rx_buff == 0x03)
+    {
+      is_blocked = 0;
       HUM_OFF();
+      is_blocked = 1;
+    }
+    else if (rx_buff == 0x0A)
+      is_blocked = 0;
     else
       HAL_UART_Transmit(&huart1, "未知命令！", 16, 1000);
   }
 
   HAL_UART_Transmit(&huart1, "执行完毕\r\n", 15, 1000);
-  HAL_UART_Receive_IT(&huart1, rx_buff, sizeof(rx_buff));
+  HAL_UART_Receive_IT(&huart1, &rx_buff, sizeof(rx_buff));
 }
 /* USER CODE END 0 */
 
@@ -200,7 +241,7 @@ int main(void)
   OLED_ShowString(64, 2, "None", 16);
 
   HAL_ADC_Start(&hadc1);
-  HAL_UART_Receive_IT(&huart1, rx_buff, sizeof(rx_buff));
+  HAL_UART_Receive_IT(&huart1, &rx_buff, sizeof(rx_buff));
   HAL_UART_Transmit(&huart1, hello_buff, sizeof(hello_buff), 1000);
 
   /* USER CODE END 2 */
