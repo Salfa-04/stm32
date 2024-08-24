@@ -1,0 +1,13 @@
+#######################################
+# probe-rs download
+#######################################
+
+PROBE_RS = /mnt/c/Windows/probe-rs.exe
+PROBE_FLAGS = download
+PROBE_FLAGS += --probe 0d28:0204
+PROBE_FLAGS += --protocol swd
+PROBE_FLAGS += --chip STM32F103C8
+PROBE_FLAGS += --connect-under-reset
+
+download: $(BUILD_DIR)/$(TARGET).elf
+	$(PROBE_RS) $(PROBE_FLAGS) $(BUILD_DIR)/$(TARGET).elf
