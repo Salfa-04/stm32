@@ -1,0 +1,242 @@
+ARM GAS  /tmp/ccYsHl2u.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 23, 1
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 2
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"stm32f4xx_hal_pwr_ex.c"
+  14              		.text
+  15              		.section	.text.HAL_PWREx_EnableBkUpReg,"ax",%progbits
+  16              		.align	1
+  17              		.p2align 2,,3
+  18              		.global	HAL_PWREx_EnableBkUpReg
+  19              		.syntax unified
+  20              		.thumb
+  21              		.thumb_func
+  23              	HAL_PWREx_EnableBkUpReg:
+  24              		@ args = 0, pretend = 0, frame = 0
+  25              		@ frame_needed = 0, uses_anonymous_args = 0
+  26 0000 38B5     		push	{r3, r4, r5, lr}
+  27 0002 0B4B     		ldr	r3, .L8
+  28 0004 0B4D     		ldr	r5, .L8+4
+  29 0006 0122     		movs	r2, #1
+  30 0008 C3F8A420 		str	r2, [r3, #164]
+  31 000c FFF7FEFF 		bl	HAL_GetTick
+  32 0010 0446     		mov	r4, r0
+  33 0012 05E0     		b	.L2
+  34              	.L4:
+  35 0014 FFF7FEFF 		bl	HAL_GetTick
+  36 0018 001B     		subs	r0, r0, r4
+  37 001a B0F57A7F 		cmp	r0, #1000
+  38 001e 04D8     		bhi	.L5
+  39              	.L2:
+  40 0020 6B68     		ldr	r3, [r5, #4]
+  41 0022 1B07     		lsls	r3, r3, #28
+  42 0024 F6D5     		bpl	.L4
+  43 0026 0020     		movs	r0, #0
+  44 0028 38BD     		pop	{r3, r4, r5, pc}
+  45              	.L5:
+  46 002a 0320     		movs	r0, #3
+  47 002c 38BD     		pop	{r3, r4, r5, pc}
+  48              	.L9:
+  49 002e 00BF     		.align	2
+  50              	.L8:
+  51 0030 00000E42 		.word	1108213760
+  52 0034 00700040 		.word	1073770496
+  54              		.section	.text.HAL_PWREx_DisableBkUpReg,"ax",%progbits
+  55              		.align	1
+  56              		.p2align 2,,3
+  57              		.global	HAL_PWREx_DisableBkUpReg
+  58              		.syntax unified
+  59              		.thumb
+ARM GAS  /tmp/ccYsHl2u.s 			page 2
+
+
+  60              		.thumb_func
+  62              	HAL_PWREx_DisableBkUpReg:
+  63              		@ args = 0, pretend = 0, frame = 0
+  64              		@ frame_needed = 0, uses_anonymous_args = 0
+  65 0000 38B5     		push	{r3, r4, r5, lr}
+  66 0002 0B4B     		ldr	r3, .L16
+  67 0004 0B4D     		ldr	r5, .L16+4
+  68 0006 0022     		movs	r2, #0
+  69 0008 C3F8A420 		str	r2, [r3, #164]
+  70 000c FFF7FEFF 		bl	HAL_GetTick
+  71 0010 0446     		mov	r4, r0
+  72 0012 05E0     		b	.L11
+  73              	.L13:
+  74 0014 FFF7FEFF 		bl	HAL_GetTick
+  75 0018 001B     		subs	r0, r0, r4
+  76 001a B0F57A7F 		cmp	r0, #1000
+  77 001e 05D8     		bhi	.L14
+  78              	.L11:
+  79 0020 6B68     		ldr	r3, [r5, #4]
+  80 0022 13F00803 		ands	r3, r3, #8
+  81 0026 F5D1     		bne	.L13
+  82 0028 1846     		mov	r0, r3
+  83 002a 38BD     		pop	{r3, r4, r5, pc}
+  84              	.L14:
+  85 002c 0320     		movs	r0, #3
+  86 002e 38BD     		pop	{r3, r4, r5, pc}
+  87              	.L17:
+  88              		.align	2
+  89              	.L16:
+  90 0030 00000E42 		.word	1108213760
+  91 0034 00700040 		.word	1073770496
+  93              		.section	.text.HAL_PWREx_EnableFlashPowerDown,"ax",%progbits
+  94              		.align	1
+  95              		.p2align 2,,3
+  96              		.global	HAL_PWREx_EnableFlashPowerDown
+  97              		.syntax unified
+  98              		.thumb
+  99              		.thumb_func
+ 101              	HAL_PWREx_EnableFlashPowerDown:
+ 102              		@ args = 0, pretend = 0, frame = 0
+ 103              		@ frame_needed = 0, uses_anonymous_args = 0
+ 104              		@ link register save eliminated.
+ 105 0000 014B     		ldr	r3, .L19
+ 106 0002 0122     		movs	r2, #1
+ 107 0004 5A62     		str	r2, [r3, #36]
+ 108 0006 7047     		bx	lr
+ 109              	.L20:
+ 110              		.align	2
+ 111              	.L19:
+ 112 0008 00000E42 		.word	1108213760
+ 114              		.section	.text.HAL_PWREx_DisableFlashPowerDown,"ax",%progbits
+ 115              		.align	1
+ 116              		.p2align 2,,3
+ 117              		.global	HAL_PWREx_DisableFlashPowerDown
+ 118              		.syntax unified
+ 119              		.thumb
+ 120              		.thumb_func
+ARM GAS  /tmp/ccYsHl2u.s 			page 3
+
+
+ 122              	HAL_PWREx_DisableFlashPowerDown:
+ 123              		@ args = 0, pretend = 0, frame = 0
+ 124              		@ frame_needed = 0, uses_anonymous_args = 0
+ 125              		@ link register save eliminated.
+ 126 0000 014B     		ldr	r3, .L22
+ 127 0002 0022     		movs	r2, #0
+ 128 0004 5A62     		str	r2, [r3, #36]
+ 129 0006 7047     		bx	lr
+ 130              	.L23:
+ 131              		.align	2
+ 132              	.L22:
+ 133 0008 00000E42 		.word	1108213760
+ 135              		.section	.text.HAL_PWREx_GetVoltageRange,"ax",%progbits
+ 136              		.align	1
+ 137              		.p2align 2,,3
+ 138              		.global	HAL_PWREx_GetVoltageRange
+ 139              		.syntax unified
+ 140              		.thumb
+ 141              		.thumb_func
+ 143              	HAL_PWREx_GetVoltageRange:
+ 144              		@ args = 0, pretend = 0, frame = 0
+ 145              		@ frame_needed = 0, uses_anonymous_args = 0
+ 146              		@ link register save eliminated.
+ 147 0000 024B     		ldr	r3, .L25
+ 148 0002 1868     		ldr	r0, [r3]
+ 149 0004 00F48040 		and	r0, r0, #16384
+ 150 0008 7047     		bx	lr
+ 151              	.L26:
+ 152 000a 00BF     		.align	2
+ 153              	.L25:
+ 154 000c 00700040 		.word	1073770496
+ 156              		.section	.text.HAL_PWREx_ControlVoltageScaling,"ax",%progbits
+ 157              		.align	1
+ 158              		.p2align 2,,3
+ 159              		.global	HAL_PWREx_ControlVoltageScaling
+ 160              		.syntax unified
+ 161              		.thumb
+ 162              		.thumb_func
+ 164              	HAL_PWREx_ControlVoltageScaling:
+ 165              		@ args = 0, pretend = 0, frame = 8
+ 166              		@ frame_needed = 0, uses_anonymous_args = 0
+ 167 0000 30B5     		push	{r4, r5, lr}
+ 168 0002 83B0     		sub	sp, sp, #12
+ 169 0004 154B     		ldr	r3, .L33
+ 170 0006 164C     		ldr	r4, .L33+4
+ 171 0008 0021     		movs	r1, #0
+ 172 000a 0091     		str	r1, [sp]
+ 173 000c 1A6C     		ldr	r2, [r3, #64]
+ 174 000e 42F08052 		orr	r2, r2, #268435456
+ 175 0012 1A64     		str	r2, [r3, #64]
+ 176 0014 1B6C     		ldr	r3, [r3, #64]
+ 177 0016 03F08053 		and	r3, r3, #268435456
+ 178 001a 0093     		str	r3, [sp]
+ 179 001c 009B     		ldr	r3, [sp]
+ 180 001e 0191     		str	r1, [sp, #4]
+ 181 0020 2368     		ldr	r3, [r4]
+ 182 0022 23F48043 		bic	r3, r3, #16384
+ARM GAS  /tmp/ccYsHl2u.s 			page 4
+
+
+ 183 0026 0343     		orrs	r3, r3, r0
+ 184 0028 2360     		str	r3, [r4]
+ 185 002a 2368     		ldr	r3, [r4]
+ 186 002c 03F48043 		and	r3, r3, #16384
+ 187 0030 0193     		str	r3, [sp, #4]
+ 188 0032 019B     		ldr	r3, [sp, #4]
+ 189 0034 FFF7FEFF 		bl	HAL_GetTick
+ 190 0038 0546     		mov	r5, r0
+ 191 003a 05E0     		b	.L28
+ 192              	.L30:
+ 193 003c FFF7FEFF 		bl	HAL_GetTick
+ 194 0040 401B     		subs	r0, r0, r5
+ 195 0042 B0F57A7F 		cmp	r0, #1000
+ 196 0046 05D8     		bhi	.L31
+ 197              	.L28:
+ 198 0048 6368     		ldr	r3, [r4, #4]
+ 199 004a 5B04     		lsls	r3, r3, #17
+ 200 004c F6D5     		bpl	.L30
+ 201 004e 0020     		movs	r0, #0
+ 202 0050 03B0     		add	sp, sp, #12
+ 203              		@ sp needed
+ 204 0052 30BD     		pop	{r4, r5, pc}
+ 205              	.L31:
+ 206 0054 0320     		movs	r0, #3
+ 207 0056 03B0     		add	sp, sp, #12
+ 208              		@ sp needed
+ 209 0058 30BD     		pop	{r4, r5, pc}
+ 210              	.L34:
+ 211 005a 00BF     		.align	2
+ 212              	.L33:
+ 213 005c 00380240 		.word	1073887232
+ 214 0060 00700040 		.word	1073770496
+ 216              		.ident	"GCC: (Arch Repository) 14.1.0"
+ARM GAS  /tmp/ccYsHl2u.s 			page 5
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 stm32f4xx_hal_pwr_ex.c
+     /tmp/ccYsHl2u.s:16     .text.HAL_PWREx_EnableBkUpReg:00000000 $t
+     /tmp/ccYsHl2u.s:23     .text.HAL_PWREx_EnableBkUpReg:00000000 HAL_PWREx_EnableBkUpReg
+     /tmp/ccYsHl2u.s:51     .text.HAL_PWREx_EnableBkUpReg:00000030 $d
+     /tmp/ccYsHl2u.s:55     .text.HAL_PWREx_DisableBkUpReg:00000000 $t
+     /tmp/ccYsHl2u.s:62     .text.HAL_PWREx_DisableBkUpReg:00000000 HAL_PWREx_DisableBkUpReg
+     /tmp/ccYsHl2u.s:90     .text.HAL_PWREx_DisableBkUpReg:00000030 $d
+     /tmp/ccYsHl2u.s:94     .text.HAL_PWREx_EnableFlashPowerDown:00000000 $t
+     /tmp/ccYsHl2u.s:101    .text.HAL_PWREx_EnableFlashPowerDown:00000000 HAL_PWREx_EnableFlashPowerDown
+     /tmp/ccYsHl2u.s:112    .text.HAL_PWREx_EnableFlashPowerDown:00000008 $d
+     /tmp/ccYsHl2u.s:115    .text.HAL_PWREx_DisableFlashPowerDown:00000000 $t
+     /tmp/ccYsHl2u.s:122    .text.HAL_PWREx_DisableFlashPowerDown:00000000 HAL_PWREx_DisableFlashPowerDown
+     /tmp/ccYsHl2u.s:133    .text.HAL_PWREx_DisableFlashPowerDown:00000008 $d
+     /tmp/ccYsHl2u.s:136    .text.HAL_PWREx_GetVoltageRange:00000000 $t
+     /tmp/ccYsHl2u.s:143    .text.HAL_PWREx_GetVoltageRange:00000000 HAL_PWREx_GetVoltageRange
+     /tmp/ccYsHl2u.s:154    .text.HAL_PWREx_GetVoltageRange:0000000c $d
+     /tmp/ccYsHl2u.s:157    .text.HAL_PWREx_ControlVoltageScaling:00000000 $t
+     /tmp/ccYsHl2u.s:164    .text.HAL_PWREx_ControlVoltageScaling:00000000 HAL_PWREx_ControlVoltageScaling
+     /tmp/ccYsHl2u.s:213    .text.HAL_PWREx_ControlVoltageScaling:0000005c $d
+
+UNDEFINED SYMBOLS
+HAL_GetTick

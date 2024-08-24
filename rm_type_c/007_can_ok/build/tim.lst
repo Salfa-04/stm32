@@ -1,0 +1,173 @@
+ARM GAS  /tmp/ccMowhBh.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 23, 1
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 2
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"tim.c"
+  14              		.text
+  15              		.section	.text.MX_TIM7_Init,"ax",%progbits
+  16              		.align	1
+  17              		.p2align 2,,3
+  18              		.global	MX_TIM7_Init
+  19              		.syntax unified
+  20              		.thumb
+  21              		.thumb_func
+  23              	MX_TIM7_Init:
+  24              		@ args = 0, pretend = 0, frame = 8
+  25              		@ frame_needed = 0, uses_anonymous_args = 0
+  26 0000 00B5     		push	{lr}
+  27 0002 1248     		ldr	r0, .L14
+  28 0004 1249     		ldr	r1, .L14+4
+  29 0006 40F2F312 		movw	r2, #499
+  30 000a 83B0     		sub	sp, sp, #12
+  31 000c 0023     		movs	r3, #0
+  32 000e 4260     		str	r2, [r0, #4]
+  33 0010 A722     		movs	r2, #167
+  34 0012 CDE90033 		strd	r3, r3, [sp]
+  35 0016 C0E90232 		strd	r3, r2, [r0, #8]
+  36 001a 0160     		str	r1, [r0]
+  37 001c 8361     		str	r3, [r0, #24]
+  38 001e FFF7FEFF 		bl	HAL_TIM_Base_Init
+  39 0022 58B9     		cbnz	r0, .L12
+  40              	.L2:
+  41 0024 0022     		movs	r2, #0
+  42 0026 0023     		movs	r3, #0
+  43 0028 0848     		ldr	r0, .L14
+  44 002a 6946     		mov	r1, sp
+  45 002c CDE90023 		strd	r2, [sp]
+  46 0030 FFF7FEFF 		bl	HAL_TIMEx_MasterConfigSynchronization
+  47 0034 28B9     		cbnz	r0, .L13
+  48 0036 03B0     		add	sp, sp, #12
+  49              		@ sp needed
+  50 0038 5DF804FB 		ldr	pc, [sp], #4
+  51              	.L12:
+  52 003c FFF7FEFF 		bl	Error_Handler
+  53 0040 F0E7     		b	.L2
+  54              	.L13:
+  55 0042 FFF7FEFF 		bl	Error_Handler
+  56 0046 03B0     		add	sp, sp, #12
+  57              		@ sp needed
+  58 0048 5DF804FB 		ldr	pc, [sp], #4
+ARM GAS  /tmp/ccMowhBh.s 			page 2
+
+
+  59              	.L15:
+  60              		.align	2
+  61              	.L14:
+  62 004c 00000000 		.word	htim7
+  63 0050 00140040 		.word	1073746944
+  65              		.section	.text.HAL_TIM_Base_MspInit,"ax",%progbits
+  66              		.align	1
+  67              		.p2align 2,,3
+  68              		.global	HAL_TIM_Base_MspInit
+  69              		.syntax unified
+  70              		.thumb
+  71              		.thumb_func
+  73              	HAL_TIM_Base_MspInit:
+  74              		@ args = 0, pretend = 0, frame = 8
+  75              		@ frame_needed = 0, uses_anonymous_args = 0
+  76 0000 0E4B     		ldr	r3, .L22
+  77 0002 0268     		ldr	r2, [r0]
+  78 0004 9A42     		cmp	r2, r3
+  79 0006 00D0     		beq	.L21
+  80 0008 7047     		bx	lr
+  81              	.L21:
+  82 000a 00B5     		push	{lr}
+  83 000c 83B0     		sub	sp, sp, #12
+  84 000e 0022     		movs	r2, #0
+  85 0010 03F50933 		add	r3, r3, #140288
+  86 0014 0192     		str	r2, [sp, #4]
+  87 0016 196C     		ldr	r1, [r3, #64]
+  88 0018 41F02001 		orr	r1, r1, #32
+  89 001c 1964     		str	r1, [r3, #64]
+  90 001e 1B6C     		ldr	r3, [r3, #64]
+  91 0020 03F02003 		and	r3, r3, #32
+  92 0024 0193     		str	r3, [sp, #4]
+  93 0026 1146     		mov	r1, r2
+  94 0028 3720     		movs	r0, #55
+  95 002a 019B     		ldr	r3, [sp, #4]
+  96 002c FFF7FEFF 		bl	HAL_NVIC_SetPriority
+  97 0030 3720     		movs	r0, #55
+  98 0032 03B0     		add	sp, sp, #12
+  99              		@ sp needed
+ 100 0034 5DF804EB 		ldr	lr, [sp], #4
+ 101 0038 FFF7FEBF 		b	HAL_NVIC_EnableIRQ
+ 102              	.L23:
+ 103              		.align	2
+ 104              	.L22:
+ 105 003c 00140040 		.word	1073746944
+ 107              		.section	.text.HAL_TIM_Base_MspDeInit,"ax",%progbits
+ 108              		.align	1
+ 109              		.p2align 2,,3
+ 110              		.global	HAL_TIM_Base_MspDeInit
+ 111              		.syntax unified
+ 112              		.thumb
+ 113              		.thumb_func
+ 115              	HAL_TIM_Base_MspDeInit:
+ 116              		@ args = 0, pretend = 0, frame = 0
+ 117              		@ frame_needed = 0, uses_anonymous_args = 0
+ 118              		@ link register save eliminated.
+ 119 0000 064B     		ldr	r3, .L27
+ARM GAS  /tmp/ccMowhBh.s 			page 3
+
+
+ 120 0002 0268     		ldr	r2, [r0]
+ 121 0004 9A42     		cmp	r2, r3
+ 122 0006 00D0     		beq	.L26
+ 123 0008 7047     		bx	lr
+ 124              	.L26:
+ 125 000a 054A     		ldr	r2, .L27+4
+ 126 000c 136C     		ldr	r3, [r2, #64]
+ 127 000e 23F02003 		bic	r3, r3, #32
+ 128 0012 3720     		movs	r0, #55
+ 129 0014 1364     		str	r3, [r2, #64]
+ 130 0016 FFF7FEBF 		b	HAL_NVIC_DisableIRQ
+ 131              	.L28:
+ 132 001a 00BF     		.align	2
+ 133              	.L27:
+ 134 001c 00140040 		.word	1073746944
+ 135 0020 00380240 		.word	1073887232
+ 137              		.global	htim7
+ 138              		.section	.bss.htim7,"aw",%nobits
+ 139              		.align	3
+ 142              	htim7:
+ 143 0000 00000000 		.space	72
+ 143      00000000 
+ 143      00000000 
+ 143      00000000 
+ 143      00000000 
+ 144              		.ident	"GCC: (Arch Repository) 14.1.0"
+ARM GAS  /tmp/ccMowhBh.s 			page 4
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 tim.c
+     /tmp/ccMowhBh.s:16     .text.MX_TIM7_Init:00000000 $t
+     /tmp/ccMowhBh.s:23     .text.MX_TIM7_Init:00000000 MX_TIM7_Init
+     /tmp/ccMowhBh.s:62     .text.MX_TIM7_Init:0000004c $d
+     /tmp/ccMowhBh.s:142    .bss.htim7:00000000 htim7
+     /tmp/ccMowhBh.s:66     .text.HAL_TIM_Base_MspInit:00000000 $t
+     /tmp/ccMowhBh.s:73     .text.HAL_TIM_Base_MspInit:00000000 HAL_TIM_Base_MspInit
+     /tmp/ccMowhBh.s:105    .text.HAL_TIM_Base_MspInit:0000003c $d
+     /tmp/ccMowhBh.s:108    .text.HAL_TIM_Base_MspDeInit:00000000 $t
+     /tmp/ccMowhBh.s:115    .text.HAL_TIM_Base_MspDeInit:00000000 HAL_TIM_Base_MspDeInit
+     /tmp/ccMowhBh.s:134    .text.HAL_TIM_Base_MspDeInit:0000001c $d
+     /tmp/ccMowhBh.s:139    .bss.htim7:00000000 $d
+
+UNDEFINED SYMBOLS
+HAL_TIM_Base_Init
+HAL_TIMEx_MasterConfigSynchronization
+Error_Handler
+HAL_NVIC_SetPriority
+HAL_NVIC_EnableIRQ
+HAL_NVIC_DisableIRQ

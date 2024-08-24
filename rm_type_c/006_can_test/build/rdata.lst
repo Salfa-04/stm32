@@ -1,0 +1,231 @@
+ARM GAS  /tmp/cchKFiB5.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 23, 1
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 2
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"rdata.c"
+  14              		.text
+  15              		.section	.rodata.display.str1.4,"aMS",%progbits,1
+  16              		.align	2
+  17              	.LC0:
+  18 0000 43414E3A 		.ascii	"CAN: angle: %d, speed: %d, torque: %d\012\012\012\000"
+  18      20616E67 
+  18      6C653A20 
+  18      25642C20 
+  18      73706565 
+  19              		.section	.text.display,"ax",%progbits
+  20              		.align	1
+  21              		.p2align 2,,3
+  22              		.global	display
+  23              		.syntax unified
+  24              		.thumb
+  25              		.thumb_func
+  27              	display:
+  28              		@ args = 0, pretend = 0, frame = 8
+  29              		@ frame_needed = 0, uses_anonymous_args = 0
+  30 0000 00B5     		push	{lr}
+  31 0002 85B0     		sub	sp, sp, #20
+  32 0004 04AB     		add	r3, sp, #16
+  33 0006 03E90300 		stmdb	r3, {r0, r1}
+  34 000a BDF80C00 		ldrh	r0, [sp, #12]
+  35 000e BDF90A30 		ldrsh	r3, [sp, #10]
+  36 0012 BDF80820 		ldrh	r2, [sp, #8]
+  37 0016 0090     		str	r0, [sp]
+  38 0018 0749     		ldr	r1, .L4
+  39 001a 0848     		ldr	r0, .L4+4
+  40 001c FFF7FEFF 		bl	sprintf
+  41 0020 0649     		ldr	r1, .L4+4
+  42 0022 0246     		mov	r2, r0
+  43 0024 0648     		ldr	r0, .L4+8
+  44 0026 4FF47A73 		mov	r3, #1000
+  45 002a 92B2     		uxth	r2, r2
+  46 002c 05B0     		add	sp, sp, #20
+  47              		@ sp needed
+  48 002e 5DF804EB 		ldr	lr, [sp], #4
+  49 0032 FFF7FEBF 		b	HAL_UART_Transmit
+  50              	.L5:
+  51 0036 00BF     		.align	2
+  52              	.L4:
+  53 0038 00000000 		.word	.LC0
+  54 003c 00000000 		.word	display_buffer
+ARM GAS  /tmp/cchKFiB5.s 			page 2
+
+
+  55 0040 00000000 		.word	huart1
+  57              		.section	.text.motor_receive,"ax",%progbits
+  58              		.align	1
+  59              		.p2align 2,,3
+  60              		.global	motor_receive
+  61              		.syntax unified
+  62              		.thumb
+  63              		.thumb_func
+  65              	motor_receive:
+  66              		@ args = 0, pretend = 0, frame = 40
+  67              		@ frame_needed = 0, uses_anonymous_args = 0
+  68 0000 10B5     		push	{r4, lr}
+  69 0002 8AB0     		sub	sp, sp, #40
+  70 0004 0446     		mov	r4, r0
+  71 0006 01AB     		add	r3, sp, #4
+  72 0008 03AA     		add	r2, sp, #12
+  73 000a 0021     		movs	r1, #0
+  74 000c 0848     		ldr	r0, .L8
+  75 000e FFF7FEFF 		bl	HAL_CAN_GetRxMessage
+  76 0012 BDF80620 		ldrh	r2, [sp, #6]
+  77 0016 BDF80830 		ldrh	r3, [sp, #8]
+  78 001a BDF80410 		ldrh	r1, [sp, #4]
+  79 001e 52BA     		rev16	r2, r2
+  80 0020 5BBA     		rev16	r3, r3
+  81 0022 49BA     		rev16	r1, r1
+  82 0024 2046     		mov	r0, r4
+  83 0026 2180     		strh	r1, [r4]	@ movhi
+  84 0028 6280     		strh	r2, [r4, #2]	@ movhi
+  85 002a A380     		strh	r3, [r4, #4]	@ movhi
+  86 002c 0AB0     		add	sp, sp, #40
+  87              		@ sp needed
+  88 002e 10BD     		pop	{r4, pc}
+  89              	.L9:
+  90              		.align	2
+  91              	.L8:
+  92 0030 00000000 		.word	hcan1
+  94              		.section	.text.can_send_motor,"ax",%progbits
+  95              		.align	1
+  96              		.p2align 2,,3
+  97              		.global	can_send_motor
+  98              		.syntax unified
+  99              		.thumb
+ 100              		.thumb_func
+ 102              	can_send_motor:
+ 103              		@ args = 0, pretend = 0, frame = 40
+ 104              		@ frame_needed = 0, uses_anonymous_args = 0
+ 105 0000 30B5     		push	{r4, r5, lr}
+ 106 0002 8BB0     		sub	sp, sp, #44
+ 107 0004 0023     		movs	r3, #0
+ 108 0006 0824     		movs	r4, #8
+ 109 0008 CDF80A30 		str	r3, [sp, #10]	@ unaligned
+ 110 000c ADF80E30 		strh	r3, [sp, #14]	@ movhi
+ 111 0010 40BA     		rev16	r0, r0
+ 112 0012 40F2FF11 		movw	r1, #511
+ 113 0016 0022     		movs	r2, #0
+ 114 0018 0023     		movs	r3, #0
+ 115 001a CDE90623 		strd	r2, [sp, #24]
+ARM GAS  /tmp/cchKFiB5.s 			page 3
+
+
+ 116 001e ADF80800 		strh	r0, [sp, #8]	@ movhi
+ 117 0022 0491     		str	r1, [sp, #16]
+ 118 0024 0125     		movs	r5, #1
+ 119 0026 01AB     		add	r3, sp, #4
+ 120 0028 0DEB0402 		add	r2, sp, r4
+ 121 002c 04A9     		add	r1, sp, #16
+ 122 002e 0348     		ldr	r0, .L12
+ 123 0030 0195     		str	r5, [sp, #4]
+ 124 0032 0894     		str	r4, [sp, #32]
+ 125 0034 FFF7FEFF 		bl	HAL_CAN_AddTxMessage
+ 126 0038 0BB0     		add	sp, sp, #44
+ 127              		@ sp needed
+ 128 003a 30BD     		pop	{r4, r5, pc}
+ 129              	.L13:
+ 130              		.align	2
+ 131              	.L12:
+ 132 003c 00000000 		.word	hcan1
+ 134              		.section	.text.HAL_CAN_RxFifo0MsgPendingCallback,"ax",%progbits
+ 135              		.align	1
+ 136              		.p2align 2,,3
+ 137              		.global	HAL_CAN_RxFifo0MsgPendingCallback
+ 138              		.syntax unified
+ 139              		.thumb
+ 140              		.thumb_func
+ 142              	HAL_CAN_RxFifo0MsgPendingCallback:
+ 143              		@ args = 0, pretend = 0, frame = 0
+ 144              		@ frame_needed = 0, uses_anonymous_args = 0
+ 145              		@ link register save eliminated.
+ 146 0000 7047     		bx	lr
+ 148 0002 00BF     		.section	.text.can_filter_init,"ax",%progbits
+ 149              		.align	1
+ 150              		.p2align 2,,3
+ 151              		.global	can_filter_init
+ 152              		.syntax unified
+ 153              		.thumb
+ 154              		.thumb_func
+ 156              	can_filter_init:
+ 157              		@ args = 0, pretend = 0, frame = 40
+ 158              		@ frame_needed = 0, uses_anonymous_args = 0
+ 159 0000 10B5     		push	{r4, lr}
+ 160 0002 0022     		movs	r2, #0
+ 161 0004 8AB0     		sub	sp, sp, #40
+ 162 0006 0023     		movs	r3, #0
+ 163 0008 CDE90023 		strd	r2, [sp]
+ 164 000c CDE90223 		strd	r2, [sp, #8]
+ 165 0010 CDE90423 		strd	r2, [sp, #16]
+ 166 0014 6946     		mov	r1, sp
+ 167 0016 0022     		movs	r2, #0
+ 168 0018 0123     		movs	r3, #1
+ 169 001a 0124     		movs	r4, #1
+ 170 001c 0548     		ldr	r0, .L17
+ 171 001e 0894     		str	r4, [sp, #32]
+ 172 0020 CDE90623 		strd	r2, [sp, #24]
+ 173 0024 FFF7FEFF 		bl	HAL_CAN_ConfigFilter
+ 174 0028 0248     		ldr	r0, .L17
+ 175 002a FFF7FEFF 		bl	HAL_CAN_Start
+ 176 002e 0AB0     		add	sp, sp, #40
+ARM GAS  /tmp/cchKFiB5.s 			page 4
+
+
+ 177              		@ sp needed
+ 178 0030 10BD     		pop	{r4, pc}
+ 179              	.L18:
+ 180 0032 00BF     		.align	2
+ 181              	.L17:
+ 182 0034 00000000 		.word	hcan1
+ 184              		.global	display_buffer
+ 185              		.section	.bss.display_buffer,"aw",%nobits
+ 186              		.align	2
+ 189              	display_buffer:
+ 190 0000 00000000 		.space	64
+ 190      00000000 
+ 190      00000000 
+ 190      00000000 
+ 190      00000000 
+ 191              		.ident	"GCC: (Arch Repository) 14.1.0"
+ARM GAS  /tmp/cchKFiB5.s 			page 5
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 rdata.c
+     /tmp/cchKFiB5.s:16     .rodata.display.str1.4:00000000 $d
+     /tmp/cchKFiB5.s:20     .text.display:00000000 $t
+     /tmp/cchKFiB5.s:27     .text.display:00000000 display
+     /tmp/cchKFiB5.s:53     .text.display:00000038 $d
+     /tmp/cchKFiB5.s:189    .bss.display_buffer:00000000 display_buffer
+     /tmp/cchKFiB5.s:58     .text.motor_receive:00000000 $t
+     /tmp/cchKFiB5.s:65     .text.motor_receive:00000000 motor_receive
+     /tmp/cchKFiB5.s:92     .text.motor_receive:00000030 $d
+     /tmp/cchKFiB5.s:95     .text.can_send_motor:00000000 $t
+     /tmp/cchKFiB5.s:102    .text.can_send_motor:00000000 can_send_motor
+     /tmp/cchKFiB5.s:132    .text.can_send_motor:0000003c $d
+     /tmp/cchKFiB5.s:135    .text.HAL_CAN_RxFifo0MsgPendingCallback:00000000 $t
+     /tmp/cchKFiB5.s:142    .text.HAL_CAN_RxFifo0MsgPendingCallback:00000000 HAL_CAN_RxFifo0MsgPendingCallback
+     /tmp/cchKFiB5.s:149    .text.can_filter_init:00000000 $t
+     /tmp/cchKFiB5.s:156    .text.can_filter_init:00000000 can_filter_init
+     /tmp/cchKFiB5.s:182    .text.can_filter_init:00000034 $d
+     /tmp/cchKFiB5.s:186    .bss.display_buffer:00000000 $d
+
+UNDEFINED SYMBOLS
+sprintf
+HAL_UART_Transmit
+huart1
+HAL_CAN_GetRxMessage
+hcan1
+HAL_CAN_AddTxMessage
+HAL_CAN_ConfigFilter
+HAL_CAN_Start

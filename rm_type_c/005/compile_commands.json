@@ -1,0 +1,32 @@
+[
+  {
+    "arguments": [
+      "/usr/sbin/arm-none-eabi-gcc",
+      "-c",
+      "-mcpu=cortex-m4",
+      "-mthumb",
+      "-mfpu=fpv4-sp-d16",
+      "-mfloat-abi=hard",
+      "-DUSE_HAL_DRIVER",
+      "-DSTM32F407xx",
+      "-ICore/Inc",
+      "-ICore/application",
+      "-ICore/bsp",
+      "-IDrivers/STM32F4xx_HAL_Driver/Inc",
+      "-IDrivers/STM32F4xx_HAL_Driver/Inc/Legacy",
+      "-IDrivers/CMSIS/Device/ST/STM32F4xx/Include",
+      "-IDrivers/CMSIS/Include",
+      "-Ofast",
+      "-Wall",
+      "-fdata-sections",
+      "-ffunction-sections",
+      "-Wa,-a,-ad,-alms=build/CAN_receive.lst",
+      "-o",
+      "build/CAN_receive.o",
+      "Core/application/CAN_receive.c"
+    ],
+    "directory": "/home/salfa/rm_type_c/005",
+    "file": "/home/salfa/rm_type_c/005/Core/application/CAN_receive.c",
+    "output": "/home/salfa/rm_type_c/005/build/CAN_receive.o"
+  }
+]

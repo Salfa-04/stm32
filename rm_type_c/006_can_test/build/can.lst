@@ -1,0 +1,190 @@
+ARM GAS  /tmp/ccUx3QQ2.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 23, 1
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 2
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"can.c"
+  14              		.text
+  15              		.section	.text.MX_CAN1_Init,"ax",%progbits
+  16              		.align	1
+  17              		.p2align 2,,3
+  18              		.global	MX_CAN1_Init
+  19              		.syntax unified
+  20              		.thumb
+  21              		.thumb_func
+  23              	MX_CAN1_Init:
+  24              		@ args = 0, pretend = 0, frame = 0
+  25              		@ frame_needed = 0, uses_anonymous_args = 0
+  26 0000 10B5     		push	{r4, lr}
+  27 0002 0C48     		ldr	r0, .L6
+  28 0004 0C4C     		ldr	r4, .L6+4
+  29 0006 0622     		movs	r2, #6
+  30 0008 0023     		movs	r3, #0
+  31 000a C4E90002 		strd	r0, r2, [r4]
+  32 000e 4FF40031 		mov	r1, #131072
+  33 0012 4FF40012 		mov	r2, #2097152
+  34 0016 2046     		mov	r0, r4
+  35 0018 C4E90233 		strd	r3, r3, [r4, #8]
+  36 001c C4E90412 		strd	r1, r2, [r4, #16]
+  37 0020 A361     		str	r3, [r4, #24]
+  38 0022 A383     		strh	r3, [r4, #28]	@ movhi
+  39 0024 FFF7FEFF 		bl	HAL_CAN_Init
+  40 0028 00B9     		cbnz	r0, .L5
+  41 002a 10BD     		pop	{r4, pc}
+  42              	.L5:
+  43 002c BDE81040 		pop	{r4, lr}
+  44 0030 FFF7FEBF 		b	Error_Handler
+  45              	.L7:
+  46              		.align	2
+  47              	.L6:
+  48 0034 00640040 		.word	1073767424
+  49 0038 00000000 		.word	hcan1
+  51              		.section	.text.HAL_CAN_MspInit,"ax",%progbits
+  52              		.align	1
+  53              		.p2align 2,,3
+  54              		.global	HAL_CAN_MspInit
+  55              		.syntax unified
+  56              		.thumb
+  57              		.thumb_func
+  59              	HAL_CAN_MspInit:
+  60              		@ args = 0, pretend = 0, frame = 32
+ARM GAS  /tmp/ccUx3QQ2.s 			page 2
+
+
+  61              		@ frame_needed = 0, uses_anonymous_args = 0
+  62 0000 30B5     		push	{r4, r5, lr}
+  63 0002 1F4B     		ldr	r3, .L12+8
+  64 0004 0268     		ldr	r2, [r0]
+  65 0006 89B0     		sub	sp, sp, #36
+  66 0008 0024     		movs	r4, #0
+  67 000a 9A42     		cmp	r2, r3
+  68 000c CDE90244 		strd	r4, r4, [sp, #8]
+  69 0010 CDE90444 		strd	r4, r4, [sp, #16]
+  70 0014 0694     		str	r4, [sp, #24]
+  71 0016 01D0     		beq	.L11
+  72 0018 09B0     		add	sp, sp, #36
+  73              		@ sp needed
+  74 001a 30BD     		pop	{r4, r5, pc}
+  75              	.L11:
+  76 001c 03F5EA33 		add	r3, r3, #119808
+  77 0020 0094     		str	r4, [sp]
+  78 0022 1A6C     		ldr	r2, [r3, #64]
+  79 0024 1748     		ldr	r0, .L12+12
+  80 0026 42F00072 		orr	r2, r2, #33554432
+  81 002a 1A64     		str	r2, [r3, #64]
+  82 002c 1A6C     		ldr	r2, [r3, #64]
+  83 002e 02F00072 		and	r2, r2, #33554432
+  84 0032 0092     		str	r2, [sp]
+  85 0034 009A     		ldr	r2, [sp]
+  86 0036 0194     		str	r4, [sp, #4]
+  87 0038 1A6B     		ldr	r2, [r3, #48]
+  88 003a 42F00802 		orr	r2, r2, #8
+  89 003e 1A63     		str	r2, [r3, #48]
+  90 0040 1B6B     		ldr	r3, [r3, #48]
+  91 0042 9FED0D7B 		vldr.64	d7, .L12	@ int
+  92 0046 03F00803 		and	r3, r3, #8
+  93 004a 0193     		str	r3, [sp, #4]
+  94 004c 02A9     		add	r1, sp, #8
+  95 004e 0923     		movs	r3, #9
+  96 0050 0322     		movs	r2, #3
+  97 0052 CDE90523 		strd	r2, r3, [sp, #20]
+  98 0056 8DED027B 		vstr.64	d7, [sp, #8]	@ int
+  99 005a 019D     		ldr	r5, [sp, #4]
+ 100 005c FFF7FEFF 		bl	HAL_GPIO_Init
+ 101 0060 2246     		mov	r2, r4
+ 102 0062 2146     		mov	r1, r4
+ 103 0064 1420     		movs	r0, #20
+ 104 0066 FFF7FEFF 		bl	HAL_NVIC_SetPriority
+ 105 006a 1420     		movs	r0, #20
+ 106 006c FFF7FEFF 		bl	HAL_NVIC_EnableIRQ
+ 107 0070 09B0     		add	sp, sp, #36
+ 108              		@ sp needed
+ 109 0072 30BD     		pop	{r4, r5, pc}
+ 110              	.L13:
+ 111 0074 AFF30080 		.align	3
+ 112              	.L12:
+ 113 0078 03000000 		.word	3
+ 114 007c 02000000 		.word	2
+ 115 0080 00640040 		.word	1073767424
+ 116 0084 000C0240 		.word	1073875968
+ 118              		.section	.text.HAL_CAN_MspDeInit,"ax",%progbits
+ARM GAS  /tmp/ccUx3QQ2.s 			page 3
+
+
+ 119              		.align	1
+ 120              		.p2align 2,,3
+ 121              		.global	HAL_CAN_MspDeInit
+ 122              		.syntax unified
+ 123              		.thumb
+ 124              		.thumb_func
+ 126              	HAL_CAN_MspDeInit:
+ 127              		@ args = 0, pretend = 0, frame = 0
+ 128              		@ frame_needed = 0, uses_anonymous_args = 0
+ 129 0000 08B5     		push	{r3, lr}
+ 130 0002 0268     		ldr	r2, [r0]
+ 131 0004 084B     		ldr	r3, .L18
+ 132 0006 9A42     		cmp	r2, r3
+ 133 0008 00D0     		beq	.L17
+ 134 000a 08BD     		pop	{r3, pc}
+ 135              	.L17:
+ 136 000c 074A     		ldr	r2, .L18+4
+ 137 000e 0848     		ldr	r0, .L18+8
+ 138 0010 136C     		ldr	r3, [r2, #64]
+ 139 0012 23F00073 		bic	r3, r3, #33554432
+ 140 0016 1364     		str	r3, [r2, #64]
+ 141 0018 0321     		movs	r1, #3
+ 142 001a FFF7FEFF 		bl	HAL_GPIO_DeInit
+ 143 001e BDE80840 		pop	{r3, lr}
+ 144 0022 1420     		movs	r0, #20
+ 145 0024 FFF7FEBF 		b	HAL_NVIC_DisableIRQ
+ 146              	.L19:
+ 147              		.align	2
+ 148              	.L18:
+ 149 0028 00640040 		.word	1073767424
+ 150 002c 00380240 		.word	1073887232
+ 151 0030 000C0240 		.word	1073875968
+ 153              		.global	hcan1
+ 154              		.section	.bss.hcan1,"aw",%nobits
+ 155              		.align	2
+ 158              	hcan1:
+ 159 0000 00000000 		.space	40
+ 159      00000000 
+ 159      00000000 
+ 159      00000000 
+ 159      00000000 
+ 160              		.ident	"GCC: (Arch Repository) 14.1.0"
+ARM GAS  /tmp/ccUx3QQ2.s 			page 4
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 can.c
+     /tmp/ccUx3QQ2.s:16     .text.MX_CAN1_Init:00000000 $t
+     /tmp/ccUx3QQ2.s:23     .text.MX_CAN1_Init:00000000 MX_CAN1_Init
+     /tmp/ccUx3QQ2.s:48     .text.MX_CAN1_Init:00000034 $d
+     /tmp/ccUx3QQ2.s:158    .bss.hcan1:00000000 hcan1
+     /tmp/ccUx3QQ2.s:52     .text.HAL_CAN_MspInit:00000000 $t
+     /tmp/ccUx3QQ2.s:59     .text.HAL_CAN_MspInit:00000000 HAL_CAN_MspInit
+     /tmp/ccUx3QQ2.s:113    .text.HAL_CAN_MspInit:00000078 $d
+     /tmp/ccUx3QQ2.s:119    .text.HAL_CAN_MspDeInit:00000000 $t
+     /tmp/ccUx3QQ2.s:126    .text.HAL_CAN_MspDeInit:00000000 HAL_CAN_MspDeInit
+     /tmp/ccUx3QQ2.s:149    .text.HAL_CAN_MspDeInit:00000028 $d
+     /tmp/ccUx3QQ2.s:155    .bss.hcan1:00000000 $d
+
+UNDEFINED SYMBOLS
+HAL_CAN_Init
+Error_Handler
+HAL_GPIO_Init
+HAL_NVIC_SetPriority
+HAL_NVIC_EnableIRQ
+HAL_GPIO_DeInit
+HAL_NVIC_DisableIRQ

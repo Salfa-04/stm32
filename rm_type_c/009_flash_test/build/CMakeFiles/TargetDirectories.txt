@@ -1,0 +1,6 @@
+/home/salfa/rm_type_c/009_flash_test/build/CMakeFiles/009_flash_test.dir
+/home/salfa/rm_type_c/009_flash_test/build/CMakeFiles/download.dir
+/home/salfa/rm_type_c/009_flash_test/build/CMakeFiles/debug.dir
+/home/salfa/rm_type_c/009_flash_test/build/CMakeFiles/gdb.dir
+/home/salfa/rm_type_c/009_flash_test/build/CMakeFiles/edit_cache.dir
+/home/salfa/rm_type_c/009_flash_test/build/CMakeFiles/rebuild_cache.dir

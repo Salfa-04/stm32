@@ -1,0 +1,6 @@
+/home/salfa/rm_type_c/014_ist8310_new/build/CMakeFiles/download.dir
+/home/salfa/rm_type_c/014_ist8310_new/build/CMakeFiles/gdb.dir
+/home/salfa/rm_type_c/014_ist8310_new/build/CMakeFiles/debug.dir
+/home/salfa/rm_type_c/014_ist8310_new/build/CMakeFiles/014_ist8310_new.dir
+/home/salfa/rm_type_c/014_ist8310_new/build/CMakeFiles/edit_cache.dir
+/home/salfa/rm_type_c/014_ist8310_new/build/CMakeFiles/rebuild_cache.dir

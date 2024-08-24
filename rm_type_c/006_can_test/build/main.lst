@@ -1,0 +1,241 @@
+ARM GAS  /tmp/ccse16Wi.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 23, 1
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 2
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"main.c"
+  14              		.text
+  15              		.section	.text.SystemClock_Config,"ax",%progbits
+  16              		.align	1
+  17              		.p2align 2,,3
+  18              		.global	SystemClock_Config
+  19              		.syntax unified
+  20              		.thumb
+  21              		.thumb_func
+  23              	SystemClock_Config:
+  24              		@ args = 0, pretend = 0, frame = 80
+  25              		@ frame_needed = 0, uses_anonymous_args = 0
+  26 0000 10B5     		push	{r4, lr}
+  27 0002 0023     		movs	r3, #0
+  28 0004 94B0     		sub	sp, sp, #80
+  29 0006 CDE90A33 		strd	r3, r3, [sp, #40]
+  30 000a CDE90C33 		strd	r3, r3, [sp, #48]
+  31 000e CDE90333 		strd	r3, r3, [sp, #12]
+  32 0012 CDE90533 		strd	r3, r3, [sp, #20]
+  33 0016 2149     		ldr	r1, .L8
+  34 0018 0193     		str	r3, [sp, #4]
+  35 001a 0793     		str	r3, [sp, #28]
+  36 001c 086C     		ldr	r0, [r1, #64]
+  37 001e 204A     		ldr	r2, .L8+4
+  38 0020 40F08050 		orr	r0, r0, #268435456
+  39 0024 0864     		str	r0, [r1, #64]
+  40 0026 096C     		ldr	r1, [r1, #64]
+  41 0028 01F08051 		and	r1, r1, #268435456
+  42 002c 0191     		str	r1, [sp, #4]
+  43 002e 0199     		ldr	r1, [sp, #4]
+  44 0030 0293     		str	r3, [sp, #8]
+  45 0032 1368     		ldr	r3, [r2]
+  46 0034 43F48043 		orr	r3, r3, #16384
+  47 0038 1360     		str	r3, [r2]
+  48 003a 1368     		ldr	r3, [r2]
+  49 003c 0120     		movs	r0, #1
+  50 003e 4FF48031 		mov	r1, #65536
+  51 0042 03F48043 		and	r3, r3, #16384
+  52 0046 CDE90801 		strd	r0, [sp, #32]
+  53 004a 0293     		str	r3, [sp, #8]
+  54 004c 4FF48001 		mov	r1, #4194304
+  55 0050 0224     		movs	r4, #2
+  56 0052 CDE90E41 		strd	r4, r1, [sp, #56]
+  57 0056 0298     		ldr	r0, [sp, #8]
+  58 0058 0421     		movs	r1, #4
+ARM GAS  /tmp/ccse16Wi.s 			page 2
+
+
+  59 005a 0220     		movs	r0, #2
+  60 005c CDE91201 		strd	r0, [sp, #72]
+  61 0060 0622     		movs	r2, #6
+  62 0062 A823     		movs	r3, #168
+  63 0064 08A8     		add	r0, sp, #32
+  64 0066 1092     		str	r2, [sp, #64]
+  65 0068 1193     		str	r3, [sp, #68]
+  66 006a FFF7FEFF 		bl	HAL_RCC_OscConfig
+  67 006e 08B1     		cbz	r0, .L2
+  68              		.syntax unified
+  69              	@ 962 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+  70 0070 72B6     		cpsid i
+  71              	@ 0 "" 2
+  72              		.thumb
+  73              		.syntax unified
+  74              	.L3:
+  75 0072 FEE7     		b	.L3
+  76              	.L2:
+  77 0074 0F22     		movs	r2, #15
+  78 0076 0346     		mov	r3, r0
+  79 0078 CDE90324 		strd	r2, r4, [sp, #12]
+  80 007c 4FF4A05C 		mov	ip, #5120
+  81 0080 4FF48052 		mov	r2, #4096
+  82 0084 03A8     		add	r0, sp, #12
+  83 0086 0521     		movs	r1, #5
+  84 0088 CDE9053C 		strd	r3, ip, [sp, #20]
+  85 008c 0792     		str	r2, [sp, #28]
+  86 008e FFF7FEFF 		bl	HAL_RCC_ClockConfig
+  87 0092 08B1     		cbz	r0, .L1
+  88              		.syntax unified
+  89              	@ 962 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+  90 0094 72B6     		cpsid i
+  91              	@ 0 "" 2
+  92              		.thumb
+  93              		.syntax unified
+  94              	.L5:
+  95 0096 FEE7     		b	.L5
+  96              	.L1:
+  97 0098 14B0     		add	sp, sp, #80
+  98              		@ sp needed
+  99 009a 10BD     		pop	{r4, pc}
+ 100              	.L9:
+ 101              		.align	2
+ 102              	.L8:
+ 103 009c 00380240 		.word	1073887232
+ 104 00a0 00700040 		.word	1073770496
+ 106              		.section	.rodata.main.str1.4,"aMS",%progbits,1
+ 107              		.align	2
+ 108              	.LC0:
+ 109 0000 48454C4C 		.ascii	"HELLO\012\000"
+ 109      4F0A00
+ 110              		.section	.text.startup.main,"ax",%progbits
+ 111              		.align	1
+ 112              		.p2align 2,,3
+ 113              		.global	main
+ 114              		.syntax unified
+ 115              		.thumb
+ARM GAS  /tmp/ccse16Wi.s 			page 3
+
+
+ 116              		.thumb_func
+ 118              	main:
+ 119              		@ args = 0, pretend = 0, frame = 8
+ 120              		@ frame_needed = 0, uses_anonymous_args = 0
+ 121 0000 10B5     		push	{r4, lr}
+ 122 0002 82B0     		sub	sp, sp, #8
+ 123 0004 FFF7FEFF 		bl	HAL_Init
+ 124 0008 FFF7FEFF 		bl	SystemClock_Config
+ 125 000c FFF7FEFF 		bl	MX_GPIO_Init
+ 126 0010 FFF7FEFF 		bl	MX_DMA_Init
+ 127 0014 FFF7FEFF 		bl	MX_CAN1_Init
+ 128 0018 FFF7FEFF 		bl	MX_USART1_UART_Init
+ 129 001c FFF7FEFF 		bl	can_filter_init
+ 130 0020 1749     		ldr	r1, .L17
+ 131 0022 1848     		ldr	r0, .L17+4
+ 132 0024 4FF47A73 		mov	r3, #1000
+ 133 0028 0622     		movs	r2, #6
+ 134 002a FFF7FEFF 		bl	HAL_UART_Transmit
+ 135 002e 6C46     		mov	r4, sp
+ 136 0030 17E0     		b	.L12
+ 137              	.L11:
+ 138 0032 4FF48061 		mov	r1, #1024
+ 139 0036 1448     		ldr	r0, .L17+8
+ 140 0038 FFF7FEFF 		bl	HAL_GPIO_TogglePin
+ 141 003c 6420     		movs	r0, #100
+ 142 003e FFF7FEFF 		bl	HAL_Delay
+ 143 0042 4FF40061 		mov	r1, #2048
+ 144 0046 1048     		ldr	r0, .L17+8
+ 145 0048 FFF7FEFF 		bl	HAL_GPIO_TogglePin
+ 146 004c 6420     		movs	r0, #100
+ 147 004e FFF7FEFF 		bl	HAL_Delay
+ 148 0052 0D48     		ldr	r0, .L17+8
+ 149 0054 4FF48051 		mov	r1, #4096
+ 150 0058 FFF7FEFF 		bl	HAL_GPIO_TogglePin
+ 151 005c 6420     		movs	r0, #100
+ 152 005e FFF7FEFF 		bl	HAL_Delay
+ 153              	.L12:
+ 154 0062 0A48     		ldr	r0, .L17+12
+ 155 0064 0021     		movs	r1, #0
+ 156 0066 FFF7FEFF 		bl	HAL_CAN_GetRxFifoFillLevel
+ 157 006a 0028     		cmp	r0, #0
+ 158 006c E1D0     		beq	.L11
+ 159 006e 2046     		mov	r0, r4
+ 160 0070 FFF7FEFF 		bl	motor_receive
+ 161 0074 94E80300 		ldm	r4, {r0, r1}
+ 162 0078 FFF7FEFF 		bl	display
+ 163 007c D9E7     		b	.L11
+ 164              	.L18:
+ 165 007e 00BF     		.align	2
+ 166              	.L17:
+ 167 0080 00000000 		.word	.LC0
+ 168 0084 00000000 		.word	huart1
+ 169 0088 001C0240 		.word	1073880064
+ 170 008c 00000000 		.word	hcan1
+ 172              		.section	.text.Error_Handler,"ax",%progbits
+ 173              		.align	1
+ 174              		.p2align 2,,3
+ARM GAS  /tmp/ccse16Wi.s 			page 4
+
+
+ 175              		.global	Error_Handler
+ 176              		.syntax unified
+ 177              		.thumb
+ 178              		.thumb_func
+ 180              	Error_Handler:
+ 181              		@ Volatile: function does not return.
+ 182              		@ args = 0, pretend = 0, frame = 0
+ 183              		@ frame_needed = 0, uses_anonymous_args = 0
+ 184              		@ link register save eliminated.
+ 185              		.syntax unified
+ 186              	@ 962 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 187 0000 72B6     		cpsid i
+ 188              	@ 0 "" 2
+ 189              		.thumb
+ 190              		.syntax unified
+ 191              	.L20:
+ 192 0002 FEE7     		b	.L20
+ 194              		.global	can_buff
+ 195              		.section	.bss.can_buff,"aw",%nobits
+ 196              		.align	2
+ 199              	can_buff:
+ 200 0000 00000000 		.space	8
+ 200      00000000 
+ 201              		.ident	"GCC: (Arch Repository) 14.1.0"
+ARM GAS  /tmp/ccse16Wi.s 			page 5
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 main.c
+     /tmp/ccse16Wi.s:16     .text.SystemClock_Config:00000000 $t
+     /tmp/ccse16Wi.s:23     .text.SystemClock_Config:00000000 SystemClock_Config
+     /tmp/ccse16Wi.s:103    .text.SystemClock_Config:0000009c $d
+     /tmp/ccse16Wi.s:107    .rodata.main.str1.4:00000000 $d
+     /tmp/ccse16Wi.s:111    .text.startup.main:00000000 $t
+     /tmp/ccse16Wi.s:118    .text.startup.main:00000000 main
+     /tmp/ccse16Wi.s:167    .text.startup.main:00000080 $d
+     /tmp/ccse16Wi.s:173    .text.Error_Handler:00000000 $t
+     /tmp/ccse16Wi.s:180    .text.Error_Handler:00000000 Error_Handler
+     /tmp/ccse16Wi.s:199    .bss.can_buff:00000000 can_buff
+     /tmp/ccse16Wi.s:196    .bss.can_buff:00000000 $d
+
+UNDEFINED SYMBOLS
+HAL_RCC_OscConfig
+HAL_RCC_ClockConfig
+HAL_Init
+MX_GPIO_Init
+MX_DMA_Init
+MX_CAN1_Init
+MX_USART1_UART_Init
+can_filter_init
+HAL_UART_Transmit
+HAL_GPIO_TogglePin
+HAL_Delay
+HAL_CAN_GetRxFifoFillLevel
+motor_receive
+display
+huart1
+hcan1

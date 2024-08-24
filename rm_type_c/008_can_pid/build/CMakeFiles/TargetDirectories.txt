@@ -1,0 +1,4 @@
+/home/salfa/rm_type_c/008_can_pid/build/CMakeFiles/000_cmake_test.dir
+/home/salfa/rm_type_c/008_can_pid/build/CMakeFiles/download.dir
+/home/salfa/rm_type_c/008_can_pid/build/CMakeFiles/edit_cache.dir
+/home/salfa/rm_type_c/008_can_pid/build/CMakeFiles/rebuild_cache.dir

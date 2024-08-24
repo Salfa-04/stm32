@@ -1,0 +1,140 @@
+[
+{
+  "directory": "/home/salfa/rm_type_c/000_cmake_test/build",
+  "command": "/usr/sbin/arm-none-eabi-gcc -DSTM32F407xx -DUSE_HAL_DRIVER -I/home/salfa/rm_type_c/000_cmake_test/Core/Inc -I/home/salfa/rm_type_c/000_cmake_test/Drivers/STM32F4xx_HAL_Driver/Inc -I/home/salfa/rm_type_c/000_cmake_test/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I/home/salfa/rm_type_c/000_cmake_test/Drivers/CMSIS/Device/ST/STM32F4xx/Include -I/home/salfa/rm_type_c/000_cmake_test/Drivers/CMSIS/Include -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -Og -g3 -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -g -std=gnu11 -o CMakeFiles/000_cmake_test.dir/Core/Src/gpio.c.obj -c /home/salfa/rm_type_c/000_cmake_test/Core/Src/gpio.c",
+  "file": "/home/salfa/rm_type_c/000_cmake_test/Core/Src/gpio.c",
+  "output": "CMakeFiles/000_cmake_test.dir/Core/Src/gpio.c.obj"
+},
+{
+  "directory": "/home/salfa/rm_type_c/000_cmake_test/build",
+  "command": "/usr/sbin/arm-none-eabi-gcc -DSTM32F407xx -DUSE_HAL_DRIVER -I/home/salfa/rm_type_c/000_cmake_test/Core/Inc -I/home/salfa/rm_type_c/000_cmake_test/Drivers/STM32F4xx_HAL_Driver/Inc -I/home/salfa/rm_type_c/000_cmake_test/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I/home/salfa/rm_type_c/000_cmake_test/Drivers/CMSIS/Device/ST/STM32F4xx/Include -I/home/salfa/rm_type_c/000_cmake_test/Drivers/CMSIS/Include -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -Og -g3 -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -g -std=gnu11 -o CMakeFiles/000_cmake_test.dir/Core/Src/main.c.obj -c /home/salfa/rm_type_c/000_cmake_test/Core/Src/main.c",
+  "file": "/home/salfa/rm_type_c/000_cmake_test/Core/Src/main.c",
+  "output": "CMakeFiles/000_cmake_test.dir/Core/Src/main.c.obj"
+},
+{
+  "directory": "/home/salfa/rm_type_c/000_cmake_test/build",
+  "command": "/usr/sbin/arm-none-eabi-gcc -DSTM32F407xx -DUSE_HAL_DRIVER -I/home/salfa/rm_type_c/000_cmake_test/Core/Inc -I/home/salfa/rm_type_c/000_cmake_test/Drivers/STM32F4xx_HAL_Driver/Inc -I/home/salfa/rm_type_c/000_cmake_test/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I/home/salfa/rm_type_c/000_cmake_test/Drivers/CMSIS/Device/ST/STM32F4xx/Include -I/home/salfa/rm_type_c/000_cmake_test/Drivers/CMSIS/Include -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -Og -g3 -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -g -std=gnu11 -o CMakeFiles/000_cmake_test.dir/Core/Src/stm32f4xx_hal_msp.c.obj -c /home/salfa/rm_type_c/000_cmake_test/Core/Src/stm32f4xx_hal_msp.c",
+  "file": "/home/salfa/rm_type_c/000_cmake_test/Core/Src/stm32f4xx_hal_msp.c",
+  "output": "CMakeFiles/000_cmake_test.dir/Core/Src/stm32f4xx_hal_msp.c.obj"
+},
+{
+  "directory": "/home/salfa/rm_type_c/000_cmake_test/build",
+  "command": "/usr/sbin/arm-none-eabi-gcc -DSTM32F407xx -DUSE_HAL_DRIVER -I/home/salfa/rm_type_c/000_cmake_test/Core/Inc -I/home/salfa/rm_type_c/000_cmake_test/Drivers/STM32F4xx_HAL_Driver/Inc -I/home/salfa/rm_type_c/000_cmake_test/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I/home/salfa/rm_type_c/000_cmake_test/Drivers/CMSIS/Device/ST/STM32F4xx/Include -I/home/salfa/rm_type_c/000_cmake_test/Drivers/CMSIS/Include -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -Og -g3 -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -g -std=gnu11 -o CMakeFiles/000_cmake_test.dir/Core/Src/stm32f4xx_it.c.obj -c /home/salfa/rm_type_c/000_cmake_test/Core/Src/stm32f4xx_it.c",
+  "file": "/home/salfa/rm_type_c/000_cmake_test/Core/Src/stm32f4xx_it.c",
+  "output": "CMakeFiles/000_cmake_test.dir/Core/Src/stm32f4xx_it.c.obj"
+},
+{
+  "directory": "/home/salfa/rm_type_c/000_cmake_test/build",
+  "command": "/usr/sbin/arm-none-eabi-gcc -DSTM32F407xx -DUSE_HAL_DRIVER -I/home/salfa/rm_type_c/000_cmake_test/Core/Inc -I/home/salfa/rm_type_c/000_cmake_test/Drivers/STM32F4xx_HAL_Driver/Inc -I/home/salfa/rm_type_c/000_cmake_test/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I/home/salfa/rm_type_c/000_cmake_test/Drivers/CMSIS/Device/ST/STM32F4xx/Include -I/home/salfa/rm_type_c/000_cmake_test/Drivers/CMSIS/Include -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -Og -g3 -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -g -std=gnu11 -o CMakeFiles/000_cmake_test.dir/Core/Src/syscalls.c.obj -c /home/salfa/rm_type_c/000_cmake_test/Core/Src/syscalls.c",
+  "file": "/home/salfa/rm_type_c/000_cmake_test/Core/Src/syscalls.c",
+  "output": "CMakeFiles/000_cmake_test.dir/Core/Src/syscalls.c.obj"
+},
+{
+  "directory": "/home/salfa/rm_type_c/000_cmake_test/build",
+  "command": "/usr/sbin/arm-none-eabi-gcc -DSTM32F407xx -DUSE_HAL_DRIVER -I/home/salfa/rm_type_c/000_cmake_test/Core/Inc -I/home/salfa/rm_type_c/000_cmake_test/Drivers/STM32F4xx_HAL_Driver/Inc -I/home/salfa/rm_type_c/000_cmake_test/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I/home/salfa/rm_type_c/000_cmake_test/Drivers/CMSIS/Device/ST/STM32F4xx/Include -I/home/salfa/rm_type_c/000_cmake_test/Drivers/CMSIS/Include -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -Og -g3 -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -g -std=gnu11 -o CMakeFiles/000_cmake_test.dir/Core/Src/sysmem.c.obj -c /home/salfa/rm_type_c/000_cmake_test/Core/Src/sysmem.c",
+  "file": "/home/salfa/rm_type_c/000_cmake_test/Core/Src/sysmem.c",
+  "output": "CMakeFiles/000_cmake_test.dir/Core/Src/sysmem.c.obj"
+},
+{
+  "directory": "/home/salfa/rm_type_c/000_cmake_test/build",
+  "command": "/usr/sbin/arm-none-eabi-gcc -DSTM32F407xx -DUSE_HAL_DRIVER -I/home/salfa/rm_type_c/000_cmake_test/Core/Inc -I/home/salfa/rm_type_c/000_cmake_test/Drivers/STM32F4xx_HAL_Driver/Inc -I/home/salfa/rm_type_c/000_cmake_test/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I/home/salfa/rm_type_c/000_cmake_test/Drivers/CMSIS/Device/ST/STM32F4xx/Include -I/home/salfa/rm_type_c/000_cmake_test/Drivers/CMSIS/Include -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -Og -g3 -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -g -std=gnu11 -o CMakeFiles/000_cmake_test.dir/Core/Src/system_stm32f4xx.c.obj -c /home/salfa/rm_type_c/000_cmake_test/Core/Src/system_stm32f4xx.c",
+  "file": "/home/salfa/rm_type_c/000_cmake_test/Core/Src/system_stm32f4xx.c",
+  "output": "CMakeFiles/000_cmake_test.dir/Core/Src/system_stm32f4xx.c.obj"
+},
+{
+  "directory": "/home/salfa/rm_type_c/000_cmake_test/build",
+  "command": "/usr/sbin/arm-none-eabi-gcc -DSTM32F407xx -DUSE_HAL_DRIVER -I/home/salfa/rm_type_c/000_cmake_test/Core/Inc -I/home/salfa/rm_type_c/000_cmake_test/Drivers/STM32F4xx_HAL_Driver/Inc -I/home/salfa/rm_type_c/000_cmake_test/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I/home/salfa/rm_type_c/000_cmake_test/Drivers/CMSIS/Device/ST/STM32F4xx/Include -I/home/salfa/rm_type_c/000_cmake_test/Drivers/CMSIS/Include -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -Og -g3 -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -x assembler-with-cpp -MMD -MP -g -o CMakeFiles/000_cmake_test.dir/startup_stm32f407xx.s.obj -c /home/salfa/rm_type_c/000_cmake_test/startup_stm32f407xx.s",
+  "file": "/home/salfa/rm_type_c/000_cmake_test/startup_stm32f407xx.s",
+  "output": "CMakeFiles/000_cmake_test.dir/startup_stm32f407xx.s.obj"
+},
+{
+  "directory": "/home/salfa/rm_type_c/000_cmake_test/build",
+  "command": "/usr/sbin/arm-none-eabi-gcc -DSTM32F407xx -DUSE_HAL_DRIVER -I/home/salfa/rm_type_c/000_cmake_test/Core/Inc -I/home/salfa/rm_type_c/000_cmake_test/Drivers/STM32F4xx_HAL_Driver/Inc -I/home/salfa/rm_type_c/000_cmake_test/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I/home/salfa/rm_type_c/000_cmake_test/Drivers/CMSIS/Device/ST/STM32F4xx/Include -I/home/salfa/rm_type_c/000_cmake_test/Drivers/CMSIS/Include -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -Og -g3 -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -g -std=gnu11 -o CMakeFiles/000_cmake_test.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj -c /home/salfa/rm_type_c/000_cmake_test/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c",
+  "file": "/home/salfa/rm_type_c/000_cmake_test/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c",
+  "output": "CMakeFiles/000_cmake_test.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj"
+},
+{
+  "directory": "/home/salfa/rm_type_c/000_cmake_test/build",
+  "command": "/usr/sbin/arm-none-eabi-gcc -DSTM32F407xx -DUSE_HAL_DRIVER -I/home/salfa/rm_type_c/000_cmake_test/Core/Inc -I/home/salfa/rm_type_c/000_cmake_test/Drivers/STM32F4xx_HAL_Driver/Inc -I/home/salfa/rm_type_c/000_cmake_test/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I/home/salfa/rm_type_c/000_cmake_test/Drivers/CMSIS/Device/ST/STM32F4xx/Include -I/home/salfa/rm_type_c/000_cmake_test/Drivers/CMSIS/Include -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -Og -g3 -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -g -std=gnu11 -o CMakeFiles/000_cmake_test.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj -c /home/salfa/rm_type_c/000_cmake_test/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c",
+  "file": "/home/salfa/rm_type_c/000_cmake_test/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c",
+  "output": "CMakeFiles/000_cmake_test.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj"
+},
+{
+  "directory": "/home/salfa/rm_type_c/000_cmake_test/build",
+  "command": "/usr/sbin/arm-none-eabi-gcc -DSTM32F407xx -DUSE_HAL_DRIVER -I/home/salfa/rm_type_c/000_cmake_test/Core/Inc -I/home/salfa/rm_type_c/000_cmake_test/Drivers/STM32F4xx_HAL_Driver/Inc -I/home/salfa/rm_type_c/000_cmake_test/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I/home/salfa/rm_type_c/000_cmake_test/Drivers/CMSIS/Device/ST/STM32F4xx/Include -I/home/salfa/rm_type_c/000_cmake_test/Drivers/CMSIS/Include -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -Og -g3 -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -g -std=gnu11 -o CMakeFiles/000_cmake_test.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj -c /home/salfa/rm_type_c/000_cmake_test/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c",
+  "file": "/home/salfa/rm_type_c/000_cmake_test/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c",
+  "output": "CMakeFiles/000_cmake_test.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj"
+},
+{
+  "directory": "/home/salfa/rm_type_c/000_cmake_test/build",
+  "command": "/usr/sbin/arm-none-eabi-gcc -DSTM32F407xx -DUSE_HAL_DRIVER -I/home/salfa/rm_type_c/000_cmake_test/Core/Inc -I/home/salfa/rm_type_c/000_cmake_test/Drivers/STM32F4xx_HAL_Driver/Inc -I/home/salfa/rm_type_c/000_cmake_test/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I/home/salfa/rm_type_c/000_cmake_test/Drivers/CMSIS/Device/ST/STM32F4xx/Include -I/home/salfa/rm_type_c/000_cmake_test/Drivers/CMSIS/Include -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -Og -g3 -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -g -std=gnu11 -o CMakeFiles/000_cmake_test.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.obj -c /home/salfa/rm_type_c/000_cmake_test/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c",
+  "file": "/home/salfa/rm_type_c/000_cmake_test/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c",
+  "output": "CMakeFiles/000_cmake_test.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.obj"
+},
+{
+  "directory": "/home/salfa/rm_type_c/000_cmake_test/build",
+  "command": "/usr/sbin/arm-none-eabi-gcc -DSTM32F407xx -DUSE_HAL_DRIVER -I/home/salfa/rm_type_c/000_cmake_test/Core/Inc -I/home/salfa/rm_type_c/000_cmake_test/Drivers/STM32F4xx_HAL_Driver/Inc -I/home/salfa/rm_type_c/000_cmake_test/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I/home/salfa/rm_type_c/000_cmake_test/Drivers/CMSIS/Device/ST/STM32F4xx/Include -I/home/salfa/rm_type_c/000_cmake_test/Drivers/CMSIS/Include -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -Og -g3 -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -g -std=gnu11 -o CMakeFiles/000_cmake_test.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.obj -c /home/salfa/rm_type_c/000_cmake_test/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c",
+  "file": "/home/salfa/rm_type_c/000_cmake_test/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c",
+  "output": "CMakeFiles/000_cmake_test.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.obj"
+},
+{
+  "directory": "/home/salfa/rm_type_c/000_cmake_test/build",
+  "command": "/usr/sbin/arm-none-eabi-gcc -DSTM32F407xx -DUSE_HAL_DRIVER -I/home/salfa/rm_type_c/000_cmake_test/Core/Inc -I/home/salfa/rm_type_c/000_cmake_test/Drivers/STM32F4xx_HAL_Driver/Inc -I/home/salfa/rm_type_c/000_cmake_test/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I/home/salfa/rm_type_c/000_cmake_test/Drivers/CMSIS/Device/ST/STM32F4xx/Include -I/home/salfa/rm_type_c/000_cmake_test/Drivers/CMSIS/Include -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -Og -g3 -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -g -std=gnu11 -o CMakeFiles/000_cmake_test.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.obj -c /home/salfa/rm_type_c/000_cmake_test/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c",
+  "file": "/home/salfa/rm_type_c/000_cmake_test/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c",
+  "output": "CMakeFiles/000_cmake_test.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.obj"
+},
+{
+  "directory": "/home/salfa/rm_type_c/000_cmake_test/build",
+  "command": "/usr/sbin/arm-none-eabi-gcc -DSTM32F407xx -DUSE_HAL_DRIVER -I/home/salfa/rm_type_c/000_cmake_test/Core/Inc -I/home/salfa/rm_type_c/000_cmake_test/Drivers/STM32F4xx_HAL_Driver/Inc -I/home/salfa/rm_type_c/000_cmake_test/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I/home/salfa/rm_type_c/000_cmake_test/Drivers/CMSIS/Device/ST/STM32F4xx/Include -I/home/salfa/rm_type_c/000_cmake_test/Drivers/CMSIS/Include -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -Og -g3 -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -g -std=gnu11 -o CMakeFiles/000_cmake_test.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.obj -c /home/salfa/rm_type_c/000_cmake_test/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c",
+  "file": "/home/salfa/rm_type_c/000_cmake_test/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c",
+  "output": "CMakeFiles/000_cmake_test.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.obj"
+},
+{
+  "directory": "/home/salfa/rm_type_c/000_cmake_test/build",
+  "command": "/usr/sbin/arm-none-eabi-gcc -DSTM32F407xx -DUSE_HAL_DRIVER -I/home/salfa/rm_type_c/000_cmake_test/Core/Inc -I/home/salfa/rm_type_c/000_cmake_test/Drivers/STM32F4xx_HAL_Driver/Inc -I/home/salfa/rm_type_c/000_cmake_test/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I/home/salfa/rm_type_c/000_cmake_test/Drivers/CMSIS/Device/ST/STM32F4xx/Include -I/home/salfa/rm_type_c/000_cmake_test/Drivers/CMSIS/Include -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -Og -g3 -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -g -std=gnu11 -o CMakeFiles/000_cmake_test.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.obj -c /home/salfa/rm_type_c/000_cmake_test/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c",
+  "file": "/home/salfa/rm_type_c/000_cmake_test/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c",
+  "output": "CMakeFiles/000_cmake_test.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.obj"
+},
+{
+  "directory": "/home/salfa/rm_type_c/000_cmake_test/build",
+  "command": "/usr/sbin/arm-none-eabi-gcc -DSTM32F407xx -DUSE_HAL_DRIVER -I/home/salfa/rm_type_c/000_cmake_test/Core/Inc -I/home/salfa/rm_type_c/000_cmake_test/Drivers/STM32F4xx_HAL_Driver/Inc -I/home/salfa/rm_type_c/000_cmake_test/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I/home/salfa/rm_type_c/000_cmake_test/Drivers/CMSIS/Device/ST/STM32F4xx/Include -I/home/salfa/rm_type_c/000_cmake_test/Drivers/CMSIS/Include -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -Og -g3 -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -g -std=gnu11 -o CMakeFiles/000_cmake_test.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj -c /home/salfa/rm_type_c/000_cmake_test/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c",
+  "file": "/home/salfa/rm_type_c/000_cmake_test/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c",
+  "output": "CMakeFiles/000_cmake_test.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj"
+},
+{
+  "directory": "/home/salfa/rm_type_c/000_cmake_test/build",
+  "command": "/usr/sbin/arm-none-eabi-gcc -DSTM32F407xx -DUSE_HAL_DRIVER -I/home/salfa/rm_type_c/000_cmake_test/Core/Inc -I/home/salfa/rm_type_c/000_cmake_test/Drivers/STM32F4xx_HAL_Driver/Inc -I/home/salfa/rm_type_c/000_cmake_test/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I/home/salfa/rm_type_c/000_cmake_test/Drivers/CMSIS/Device/ST/STM32F4xx/Include -I/home/salfa/rm_type_c/000_cmake_test/Drivers/CMSIS/Include -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -Og -g3 -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -g -std=gnu11 -o CMakeFiles/000_cmake_test.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.obj -c /home/salfa/rm_type_c/000_cmake_test/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c",
+  "file": "/home/salfa/rm_type_c/000_cmake_test/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c",
+  "output": "CMakeFiles/000_cmake_test.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.obj"
+},
+{
+  "directory": "/home/salfa/rm_type_c/000_cmake_test/build",
+  "command": "/usr/sbin/arm-none-eabi-gcc -DSTM32F407xx -DUSE_HAL_DRIVER -I/home/salfa/rm_type_c/000_cmake_test/Core/Inc -I/home/salfa/rm_type_c/000_cmake_test/Drivers/STM32F4xx_HAL_Driver/Inc -I/home/salfa/rm_type_c/000_cmake_test/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I/home/salfa/rm_type_c/000_cmake_test/Drivers/CMSIS/Device/ST/STM32F4xx/Include -I/home/salfa/rm_type_c/000_cmake_test/Drivers/CMSIS/Include -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -Og -g3 -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -g -std=gnu11 -o CMakeFiles/000_cmake_test.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.obj -c /home/salfa/rm_type_c/000_cmake_test/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c",
+  "file": "/home/salfa/rm_type_c/000_cmake_test/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c",
+  "output": "CMakeFiles/000_cmake_test.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.obj"
+},
+{
+  "directory": "/home/salfa/rm_type_c/000_cmake_test/build",
+  "command": "/usr/sbin/arm-none-eabi-gcc -DSTM32F407xx -DUSE_HAL_DRIVER -I/home/salfa/rm_type_c/000_cmake_test/Core/Inc -I/home/salfa/rm_type_c/000_cmake_test/Drivers/STM32F4xx_HAL_Driver/Inc -I/home/salfa/rm_type_c/000_cmake_test/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I/home/salfa/rm_type_c/000_cmake_test/Drivers/CMSIS/Device/ST/STM32F4xx/Include -I/home/salfa/rm_type_c/000_cmake_test/Drivers/CMSIS/Include -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -Og -g3 -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -g -std=gnu11 -o CMakeFiles/000_cmake_test.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj -c /home/salfa/rm_type_c/000_cmake_test/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c",
+  "file": "/home/salfa/rm_type_c/000_cmake_test/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c",
+  "output": "CMakeFiles/000_cmake_test.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj"
+},
+{
+  "directory": "/home/salfa/rm_type_c/000_cmake_test/build",
+  "command": "/usr/sbin/arm-none-eabi-gcc -DSTM32F407xx -DUSE_HAL_DRIVER -I/home/salfa/rm_type_c/000_cmake_test/Core/Inc -I/home/salfa/rm_type_c/000_cmake_test/Drivers/STM32F4xx_HAL_Driver/Inc -I/home/salfa/rm_type_c/000_cmake_test/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I/home/salfa/rm_type_c/000_cmake_test/Drivers/CMSIS/Device/ST/STM32F4xx/Include -I/home/salfa/rm_type_c/000_cmake_test/Drivers/CMSIS/Include -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -Og -g3 -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -g -std=gnu11 -o CMakeFiles/000_cmake_test.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj -c /home/salfa/rm_type_c/000_cmake_test/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c",
+  "file": "/home/salfa/rm_type_c/000_cmake_test/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c",
+  "output": "CMakeFiles/000_cmake_test.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj"
+},
+{
+  "directory": "/home/salfa/rm_type_c/000_cmake_test/build",
+  "command": "/usr/sbin/arm-none-eabi-gcc -DSTM32F407xx -DUSE_HAL_DRIVER -I/home/salfa/rm_type_c/000_cmake_test/Core/Inc -I/home/salfa/rm_type_c/000_cmake_test/Drivers/STM32F4xx_HAL_Driver/Inc -I/home/salfa/rm_type_c/000_cmake_test/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I/home/salfa/rm_type_c/000_cmake_test/Drivers/CMSIS/Device/ST/STM32F4xx/Include -I/home/salfa/rm_type_c/000_cmake_test/Drivers/CMSIS/Include -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -Og -g3 -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -g -std=gnu11 -o CMakeFiles/000_cmake_test.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj -c /home/salfa/rm_type_c/000_cmake_test/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c",
+  "file": "/home/salfa/rm_type_c/000_cmake_test/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c",
+  "output": "CMakeFiles/000_cmake_test.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj"
+},
+{
+  "directory": "/home/salfa/rm_type_c/000_cmake_test/build",
+  "command": "/usr/sbin/arm-none-eabi-gcc -DSTM32F407xx -DUSE_HAL_DRIVER -I/home/salfa/rm_type_c/000_cmake_test/Core/Inc -I/home/salfa/rm_type_c/000_cmake_test/Drivers/STM32F4xx_HAL_Driver/Inc -I/home/salfa/rm_type_c/000_cmake_test/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I/home/salfa/rm_type_c/000_cmake_test/Drivers/CMSIS/Device/ST/STM32F4xx/Include -I/home/salfa/rm_type_c/000_cmake_test/Drivers/CMSIS/Include -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -Og -g3 -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -g -std=gnu11 -o CMakeFiles/000_cmake_test.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj -c /home/salfa/rm_type_c/000_cmake_test/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c",
+  "file": "/home/salfa/rm_type_c/000_cmake_test/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c",
+  "output": "CMakeFiles/000_cmake_test.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj"
+}
+]

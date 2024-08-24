@@ -1,0 +1,4 @@
+/home/salfa/rm_type_c/000_cmake_test/build/CMakeFiles/000_cmake_test.dir
+/home/salfa/rm_type_c/000_cmake_test/build/CMakeFiles/download.dir
+/home/salfa/rm_type_c/000_cmake_test/build/CMakeFiles/edit_cache.dir
+/home/salfa/rm_type_c/000_cmake_test/build/CMakeFiles/rebuild_cache.dir
