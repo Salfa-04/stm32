@@ -1,6 +1,0 @@
-/home/salfa/rm_type_c/013_bmi088_test/build/CMakeFiles/013_bmi088_test.dir
-/home/salfa/rm_type_c/013_bmi088_test/build/CMakeFiles/download.dir
-/home/salfa/rm_type_c/013_bmi088_test/build/CMakeFiles/gdb.dir
-/home/salfa/rm_type_c/013_bmi088_test/build/CMakeFiles/debug.dir
-/home/salfa/rm_type_c/013_bmi088_test/build/CMakeFiles/edit_cache.dir
-/home/salfa/rm_type_c/013_bmi088_test/build/CMakeFiles/rebuild_cache.dir

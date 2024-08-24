@@ -1,6 +1,0 @@
-/home/salfa/rm_type_c/001_tim6_test/build/CMakeFiles/001_tim6_test.dir
-/home/salfa/rm_type_c/001_tim6_test/build/CMakeFiles/download.dir
-/home/salfa/rm_type_c/001_tim6_test/build/CMakeFiles/edit_cache.dir
-/home/salfa/rm_type_c/001_tim6_test/build/CMakeFiles/rebuild_cache.dir
-/home/salfa/rm_type_c/001_tim6_test/build/cmake/stm32cubemx/CMakeFiles/edit_cache.dir
-/home/salfa/rm_type_c/001_tim6_test/build/cmake/stm32cubemx/CMakeFiles/rebuild_cache.dir

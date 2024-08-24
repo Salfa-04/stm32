@@ -1,6 +1,0 @@
-/home/salfa/rm_type_c/015_imu_temp/build/CMakeFiles/download.dir
-/home/salfa/rm_type_c/015_imu_temp/build/CMakeFiles/gdb.dir
-/home/salfa/rm_type_c/015_imu_temp/build/CMakeFiles/debug.dir
-/home/salfa/rm_type_c/015_imu_temp/build/CMakeFiles/015_imu_temp.dir
-/home/salfa/rm_type_c/015_imu_temp/build/CMakeFiles/edit_cache.dir
-/home/salfa/rm_type_c/015_imu_temp/build/CMakeFiles/rebuild_cache.dir
