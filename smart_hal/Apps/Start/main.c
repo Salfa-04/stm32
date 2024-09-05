@@ -7,16 +7,14 @@
 int main(void) {
   hal_clock_init();
   led_gpio_init();
-  uart2_init();
+  uart1_init();
 
   uprintf("Hello, world!\n");
 
   freertos_init();
   osKernelStart();
 
-  for (;;) {
-    /* We should never get here */
-  }
+  for (;;); /* We should never get here */
 }
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {

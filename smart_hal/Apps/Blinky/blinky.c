@@ -7,9 +7,7 @@ void blinky(void const *args) {
 
   /* Infinite loop */
   for (;;) {
-    for (uint8_t i = 0; i < 2; i++) {
-      HAL_GPIO_TogglePin(GPIOA, 1 << (6 + i));
-      osDelay(100);
-    }
+    HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);
+    osDelay(100);
   }
 }

@@ -16,9 +16,7 @@ target_link_libraries(${CMAKE_PROJECT_NAME} INTERFACE
 ##########################################
 
 add_library(example INTERFACE)
-
 file(GLOB COMPS_EXAMPLE Example/*.c)
-
 target_compile_definitions(example INTERFACE
 )
 

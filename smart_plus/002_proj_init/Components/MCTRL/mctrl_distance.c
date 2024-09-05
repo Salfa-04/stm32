@@ -61,6 +61,7 @@ void mctrl_distance_callback(void) {
   /// W = (- A + B + C - D) / 4;                    cnt
   /// N = X / Y / W; cnt -> mm
   /// N = N * 2π * WHEEL_RADIUS / (11 * 30 * 4)
+  ///
   /// 计算距离: rad -> mm
   /// N = N * WHEEL_RADIUS;
   float distance_x =
