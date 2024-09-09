@@ -28,7 +28,7 @@ void uart1_dma_init(void) {
   __HAL_RCC_DMA2_CLK_ENABLE();
 
   /* USART1_RX DMA Init */
-  hdma_usart1_rx.Instance = DMA2_Stream7;
+  hdma_usart1_rx.Instance = DMA2_Stream5;
   hdma_usart1_rx.Init.Channel = DMA_CHANNEL_4;
   hdma_usart1_rx.Init.Direction = DMA_PERIPH_TO_MEMORY;
   hdma_usart1_rx.Init.PeriphInc = DMA_PINC_DISABLE;
@@ -42,7 +42,7 @@ void uart1_dma_init(void) {
   __HAL_LINKDMA(&huart1, hdmarx, hdma_usart1_rx);
 
   /* USART1_TX DMA Init */
-  hdma_usart1_tx.Instance = DMA2_Stream5;
+  hdma_usart1_tx.Instance = DMA2_Stream7;
   hdma_usart1_tx.Init.Channel = DMA_CHANNEL_4;
   hdma_usart1_tx.Init.Direction = DMA_MEMORY_TO_PERIPH;
   hdma_usart1_tx.Init.PeriphInc = DMA_PINC_DISABLE;
@@ -76,9 +76,9 @@ void uart1_init(void) {
   huart1.Init.OverSampling = UART_OVERSAMPLING_16;
 
   /* UART1 init, and call UART MSP init */
-  HAL_UART_Init(&huart1);
   uart1_gpio_init(); /* UART1 MSP Init */
   uart1_dma_init();  /* UART1 DMA Init */
+  HAL_UART_Init(&huart1);
 
   /* USART1 interrupt Init */
   HAL_NVIC_SetPriority(USART1_IRQn, 0, 0);

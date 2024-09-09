@@ -8,6 +8,6 @@ void blinky(void const *args) {
   /* Infinite loop */
   for (;;) {
     HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);
-    osDelay(100);
+    osDelay(1000);
   }
 }

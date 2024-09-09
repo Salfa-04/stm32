@@ -1,0 +1,14 @@
+#include "blinky.h"
+
+#include "cmsis_os.h"
+
+void blinky(void const *args) {
+  HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);
+  (void)args;
+
+  /* Infinite loop */
+  for (;;) {
+    HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);
+    osDelay(1000);
+  }
+}
